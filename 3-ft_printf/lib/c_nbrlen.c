@@ -1,28 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.c                                           :+:      :+:    :+:   */
+/*   c_nbrlen.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 16:50:27 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/18 16:56:51 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/18 18:45:40 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/18 18:58:52 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	init_struct(t_printf *p, bool b)
+size_t	c_nbrlen(int nb, int base, size_t len)
 {
-	if (b == 0)
-	{
-		p->i = 0;
-		p->len = 0;
-	}
-	p->tmp = 0;
-	p->neg = 0;
-	p->flags = 0;
-	p->precision = 0;
-	p->min_len = 0;
-	p->base = 10;
+	if (nb == 0 && len == 0)
+		return (1);
+	if (nb < 0)
+		return (c_nbrlen(nb * -1, base, len + 1));
+	return (nb == 0) ? len : c_nbrlen(nb / base, base, len + 1);
 }

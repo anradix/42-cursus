@@ -6,11 +6,22 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:58:29 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/18 17:09:21 by anradix          ###   ########.fr       */
+/*   Updated: 2019/11/18 18:27:45 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	stock_error(t_printf *p)
+{
+	char *tmp;
+
+	tmp = &*p->frmt;
+	while (*tmp != '%')
+		tmp--;
+	while (tmp <= p->frmt)
+		n_buffer(p, *tmp++, 1);
+}
 
 void	n_buffer(t_printf *p, char c, size_t n)
 {

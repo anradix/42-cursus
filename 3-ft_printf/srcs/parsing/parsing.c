@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.c                                           :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 16:50:27 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/18 16:56:51 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/18 17:12:09 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/18 19:03:26 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	init_struct(t_printf *p, bool b)
+void	parsing(t_printf *p)
 {
-	if (b == 0)
-	{
-		p->i = 0;
-		p->len = 0;
-	}
-	p->tmp = 0;
-	p->neg = 0;
-	p->flags = 0;
-	p->precision = 0;
-	p->min_len = 0;
-	p->base = 10;
+	p->frmt++;
+	if (*p->frmt == '\0')
+			return ;
+	init_struct(p, 1);
+/*	get_flags(p);*/
+	get_type(p);
+	p->frmt++;
 }

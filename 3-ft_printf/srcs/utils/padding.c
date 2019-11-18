@@ -1,28 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.c                                           :+:      :+:    :+:   */
+/*   padding.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 16:50:27 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/18 16:56:51 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/18 18:51:35 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/18 19:01:35 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	init_struct(t_printf *p, bool b)
+void	padding(t_printf *p, int prec, int len, uintmax_t nb)
 {
-	if (b == 0)
-	{
-		p->i = 0;
-		p->len = 0;
-	}
-	p->tmp = 0;
-	p->neg = 0;
-	p->flags = 0;
-	p->precision = 0;
-	p->min_len = 0;
-	p->base = 10;
+	prec = check_plus(p, len, prec);
+	(p->flags & SPACE) ? n_buffer(p, ' ', 1) : 0;
+	p->neg ? n_buffer(p, '-', 1) : 0;
+	if (prec > 0)
+		n_buffer(p, '0', prec);
+	if (*p->frmt == 'X')
+		s_buffer(p, c_itoa(p, nb, c_nbrlen(nb, p->base, 0), 'A'), len);
+	else
+		s_buffer(p, c_itoa(p, nb, c_nbrlen(nb, p->base, 0), 'a'), len);
 }

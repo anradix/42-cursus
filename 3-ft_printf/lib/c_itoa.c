@@ -1,28 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   struct.c                                           :+:      :+:    :+:   */
+/*   c_itoa.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 16:50:27 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/18 16:56:51 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/18 18:55:00 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/18 18:56:15 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	init_struct(t_printf *p, bool b)
+char	*c_itoa(t_printf *p, uintmax_t nb, size_t len, char c)
 {
-	if (b == 0)
+	static char	s[101];
+
+	s[len] = '\0';
+	while (len--)
 	{
-		p->i = 0;
-		p->len = 0;
+		s[len] = (nb % p->base < 10) ? nb % p->base + '0'
+		: nb % p->base + c - 10;
+		nb /= p->base;
 	}
-	p->tmp = 0;
-	p->neg = 0;
-	p->flags = 0;
-	p->precision = 0;
-	p->min_len = 0;
-	p->base = 10;
+	return (s);
 }

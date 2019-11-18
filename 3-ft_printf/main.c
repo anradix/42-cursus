@@ -3,6 +3,6 @@
 
 int	main(int ac, char **av)
 {
-	ft_printf("salut ca va bande de gros bg");
+	ft_printf("salut ca va gros bg, je vais affficher un nombre: %x\n", 4569);
 	return (0);
 }
