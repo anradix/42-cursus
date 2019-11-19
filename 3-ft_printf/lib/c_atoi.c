@@ -1,24 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   c_atoi.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 17:12:09 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 15:46:26 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/19 15:33:36 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/19 15:43:40 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	parsing(t_printf *p)
+int		c_atoi(char *nptr)
 {
-	p->frmt++;
-	if (*p->frmt == '\0')
-			return ;
-	init_struct(p, 1);
-	get_flags(p);
-	get_type(p);
-	p->frmt++;
+	int sign;
+	int n;
+
+	sign = 1;
+	n = 0;
+	while ((*nptr >= 9 && *nptr <= 13) || (*nptr == 32))
+		nptr++;
+	sign = (*nptr == '-') ? -1 : 1;
+	if (*nptr == '+' || *nptr == '-')
+		nptr++;
+	while (*nptr >= '0' && *nptr <= '9')
+		n = ((n * 10) + (*nptr++ - '0'));
+	return (sign * n);
 }

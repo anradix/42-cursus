@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   s_chr.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 17:12:09 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 15:46:26 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/19 15:36:04 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/19 15:39:40 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	parsing(t_printf *p)
+int		s_chr(const char *s, const char c)
 {
-	p->frmt++;
-	if (*p->frmt == '\0')
-			return ;
-	init_struct(p, 1);
-	get_flags(p);
-	get_type(p);
-	p->frmt++;
+	size_t	i;
+
+	i = 0;
+	while (s[i])
+	{
+		if (s[i] == c)
+			return (i);
+		i++;
+	}
+	return (-1);
 }

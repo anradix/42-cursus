@@ -1,24 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   is_digit.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 17:12:09 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 15:46:26 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/19 15:31:29 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/19 15:33:11 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	parsing(t_printf *p)
+bool	is_digit(const char c)
 {
-	p->frmt++;
-	if (*p->frmt == '\0')
-			return ;
-	init_struct(p, 1);
-	get_flags(p);
-	get_type(p);
-	p->frmt++;
+	return (c >= '0' && c <= '9' ? 1 : 0);
 }

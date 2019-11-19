@@ -6,11 +6,40 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 18:48:55 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/18 18:53:49 by anradix          ###   ########.fr       */
+/*   Updated: 2019/11/19 16:10:41 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+void	stock_hash(t_printf *p)
+{
+	n_buffer(p, '0', 1);
+	if (*p->frmt == 'x' || *p->frmt == 'p')
+		n_buffer(p, 'x', 1);
+	else if (*p->frmt == 'X')
+		n_buffer(p, 'X', 1);
+}
+
+int		check_hash_x(t_printf *p, int prec, uintmax_t nb)
+{
+	if ((p->flags & HASH) && nb != 0)
+	{
+		stock_hash(p);
+		prec = p->precision ? prec : prec - 2;
+	}
+	return (prec);
+}
+
+int		check_hash_o(t_printf *p, int prec)
+{
+	if (p->flags & HASH)
+	{
+		stock_hash(p);
+		prec -= 1;
+	}
+	return (prec);
+}
 
 int		check_plus(t_printf *p, int len, int prec)
 {

@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   get_base.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 17:12:09 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 15:46:26 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/19 15:50:48 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/19 16:02:18 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-void	parsing(t_printf *p)
+void	get_base(t_printf *p)
 {
-	p->frmt++;
-	if (*p->frmt == '\0')
-			return ;
-	init_struct(p, 1);
-	get_flags(p);
-	get_type(p);
-	p->frmt++;
+	if (*p->frmt == 'b')
+		p->base = 2;
+	else if (*p->frmt == 'p')
+		p->base = 16;
+	else if (*p->frmt == 'o')
+		p->base = 8;
+	else if (*p->frmt == 'x' || *p->frmt == 'X')
+		p->base = 16;
+	else
+		p->base = 10;
 }
