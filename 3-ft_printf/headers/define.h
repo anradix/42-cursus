@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   define.h                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 17:12:09 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 17:08:01 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/19 17:10:25 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/19 17:19:16 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_printf.h"
+#ifndef DEFINE_H
+# define DEFINE_H
 
-void	parsing(t_printf *p)
-{
-	p->frmt++;
-	if (*p->frmt == '\0')
-		return ;
-	init_struct(p, 1);
-	get_flags(p);
-	get_type(p);
-	p->frmt++;
-}
+# ifndef BUFF_SIZE
+#  define BUFF_SIZE 42
+# endif
+
+# define SPACE	(1 << 0)
+# define MINUS	(1 << 1)
+# define PLUS	(1 << 2)
+# define HASH	(1 << 3)
+# define ZERO	(1 << 4)
+# define L		(1 << 5)
+# define H		(1 << 6)
+# define HH		(1 << 7)
+
+#endif

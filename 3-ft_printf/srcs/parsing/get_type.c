@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 17:27:53 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 17:00:02 by anradix          ###   ########.fr       */
+/*   Updated: 2019/11/19 17:08:20 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,5 @@ void		get_type(t_printf *p)
 		return (stock_c(p, (*p->frmt == '%') ? '%' : va_arg(p->va, int)));
 	if (*p->frmt == 's' || *p->frmt == 'S')
 		return (stock_s(p, va_arg(p->va, char*)));
-	/*if (*p->frmt == 'f' || *p->frmt == 'F')
-		return (stock_f(p));*/
 	return (stock_error(p));
 }

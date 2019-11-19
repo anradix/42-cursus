@@ -6,45 +6,19 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 16:53:25 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 17:03:54 by anradix          ###   ########.fr       */
+/*   Updated: 2019/11/19 17:18:43 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRINTF_H
 # define FT_PRINTF_H
 
-#include <stdarg.h>
-#include <stdbool.h>
-#include <unistd.h>
-#include <stdlib.h>
-
-#ifndef BUFF_SIZE
-# define BUFF_SIZE 42
-#endif
-
-# define SPACE	(1 << 0)
-# define MINUS	(1 << 1)
-# define PLUS	(1 << 2)
-# define HASH	(1 << 3)
-# define ZERO	(1 << 4)
-# define L		(1 << 5)
-# define H		(1 << 6)
-# define HH		(1 << 7)
-
-typedef struct	s_struct
-{
-	char		*frmt;
-	char		buff[BUFF_SIZE];
-	va_list		va;
-	bool		neg;
-	bool		tmp;
-	int			flags;
-	int			i;
-	int			len;
-	int			precision;
-	int			min_len;
-	int			base;
-}				t_printf;
+# include <stdarg.h>
+# include <stdbool.h>
+# include <unistd.h>
+# include <stdlib.h>
+# include "define.h"
+# include "struct.h"
 
 int		ft_printf(const char *format, ...);
 

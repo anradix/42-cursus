@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 16:58:29 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/18 18:27:45 by anradix          ###   ########.fr       */
+/*   Updated: 2019/11/19 17:07:27 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	s_buffer(t_printf *p, char *s, size_t n)
 	{
 		if (p->i == BUFF_SIZE)
 		{
-			write (1, p->buff, p->i);
+			write(1, p->buff, p->i);
 			p->i = 0;
 		}
 		p->buff[p->i] = *s;
