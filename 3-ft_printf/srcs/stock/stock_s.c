@@ -1,42 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   stock_o.c                                          :+:      :+:    :+:   */
+/*   stock_s.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/19 15:47:45 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 16:24:43 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/19 16:51:04 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/19 17:01:32 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../header/ft_printf.h"
+#include "ft_printf.h"
 
-void	stock_o(t_printf *p, uintmax_t nb)
+void	stock_s(t_printf *p, char *s)
 {
 	int		len;
 	int		min;
-	int		prec;
 
-	get_base(p);
-	len = c_nbrlen(nb, p->base, 0);
-	if ((p->precision == -1 || p->flags & HASH) && nb == 0)
-		len = 0;
-	prec = check_zero(p, len);
-	min = p->min_len ? (p->min_len - prec - len) : 0;
-	min -= ((p->flags & HASH) && (len >= p->precision)) ? 1 : 0;
+	len = s ? s_len(s, 0, '\0') : 6;
+	if (s == NULL)
+		s = "(null)";
+	if (p->precision && p->precision < len)
+		len = (p->precision == -1) ? 0 : p->precision;
+	min = p->min_len ? p->min_len - len : 0;
 	if (p->flags & MINUS)
 	{
-		prec = check_hash_o(p, prec);
-		u_padding(p, prec, len, nb);
+		s_buffer(p, s, len);
 		if (min > 0)
 			n_buffer(p, ' ', min);
 	}
 	else
 	{
 		if (min > 0)
-			n_buffer(p, ' ', min);
-		prec = check_hash_o(p, prec);
-		u_padding(p, prec, len, nb);
+			n_buffer(p, (p->flags & ZERO) ? '0' : ' ', min);
+		s_buffer(p, s, len);
 	}
 }

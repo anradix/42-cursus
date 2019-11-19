@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/18 17:27:53 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 16:06:29 by anradix          ###   ########.fr       */
+/*   Updated: 2019/11/19 17:00:02 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,15 +54,15 @@ void		get_type(t_printf *p)
 		return (stock_o(p, get_unb(p)));
 	if (*p->frmt == 'x' || *p->frmt == 'X')
 		return (stock_x(p, get_unb(p)));
-/*	if (*p->frmt == 'u' || *p->frmt == 'U')
-		return (p->flags & T) ? stock_t(p) : (stock_u(p, get_unb(p)));
+	if (*p->frmt == 'u')
+		return (stock_u(p, get_unb(p)));
 	if (*p->frmt == 'p')
-		return (p->flags & T) ? stock_t(p) : (stock_p(p, get_unb(p)));
+		return (stock_p(p, get_unb(p)));
 	if (*p->frmt == 'c' || *p->frmt == 'C' || *p->frmt == '%')
 		return (stock_c(p, (*p->frmt == '%') ? '%' : va_arg(p->va, int)));
 	if (*p->frmt == 's' || *p->frmt == 'S')
 		return (stock_s(p, va_arg(p->va, char*)));
-	if (*p->frmt == 'f' || *p->frmt == 'F')
+	/*if (*p->frmt == 'f' || *p->frmt == 'F')
 		return (stock_f(p));*/
 	return (stock_error(p));
 }

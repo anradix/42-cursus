@@ -1,22 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   c_nbrlen.c                                         :+:      :+:    :+:   */
+/*   stock_c.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/18 18:45:40 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/19 16:37:45 by anradix          ###   ########.fr       */
+/*   Created: 2019/11/19 16:47:02 by anradix           #+#    #+#             */
+/*   Updated: 2019/11/19 16:49:30 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		c_nbrlen(uintmax_t nb, int base, int len)
+void	stock_c(t_printf *p, char c)
 {
-	if (nb == 0 && len == 0)
-		return (1);
-	if (nb < 0)
-		return (c_nbrlen(nb * -1, base, len + 1));
-	return (nb == 0) ? len : c_nbrlen(nb / base, base, len + 1);
+	int	min;
+
+	min = p->min_len ? p->min_len - 1 : 0;
+	if (p->flags & MINUS)
+	{
+		n_buffer(p, c, 1);
+		if (min > 0)
+			n_buffer(p, ' ', min);
+	}
+	else
+	{
+		if (min > 0)
+			n_buffer(p, (p->flags & ZERO) ? '0' : ' ', min);
+		n_buffer(p, c, 1);
+	}
 }
