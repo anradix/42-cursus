@@ -6,7 +6,7 @@
 #    By: anradix <anradix@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/20 15:10:11 by anradix           #+#    #+#              #
-#    Updated: 2019/11/20 15:56:15 by anradix          ###   ########.fr        #
+#    Updated: 2019/11/20 17:10:29 by anradix          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -91,6 +91,9 @@ $(D_OBJ)/%.o: $(D_UTILS)/%.c $(F_HEADER)
 	@mkdir -p obj
 	@echo "$(GREEN).\c"
 	@$(CC) $(FLAGS) -I $(HEADER) -o $@ -c $<
+
+bonus:
+	@make
 
 clean:
 	@rm -rf $(D_OBJ)
