@@ -6,11 +6,13 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/03 16:06:04 by anradix           #+#    #+#             */
-/*   Updated: 2019/12/03 19:30:07 by anradix          ###   ########.fr       */
+/*   Updated: 2019/12/03 19:31:17 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cube_3d.h"
+
+//compile w/ cc -I /usr/local/include main.c -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit
 
 int		endop(t_struct *p)
 {
