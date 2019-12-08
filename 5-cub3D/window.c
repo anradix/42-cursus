@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   parsing.c                                          :+:      :+:    :+:   */
+/*   window.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/08 02:27:11 by anradix           #+#    #+#             */
-/*   Updated: 2019/12/08 23:33:43 by anradix          ###   ########.fr       */
+/*   Created: 2019/12/08 23:09:32 by anradix           #+#    #+#             */
+/*   Updated: 2019/12/08 23:43:44 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-bool	check_map(char *av)
+bool	create_window(t_struct *p)
 {
-	return (1);
-}
-
-bool	parse_args(t_struct *p, char **av)
-{
-	//parsign a faire	
-	check_map(*av);
-	return (1);
+		if (!(p->mlx = mlx_init()))
+			return (0);
+		if (!(p->win = mlx_new_window(p->mlx, 500, 500, "cub3d")))
+			return (0);
+		return (1);
 }
