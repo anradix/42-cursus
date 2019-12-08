@@ -1,22 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/08 02:14:34 by anradix           #+#    #+#             */
-/*   Updated: 2019/12/08 02:48:28 by anradix          ###   ########.fr       */
+/*   Created: 2019/12/08 02:27:11 by anradix           #+#    #+#             */
+/*   Updated: 2019/12/08 03:29:42 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		main(int ac, char **av)
+bool	check_map(char *av)
 {
-	t_struct	ptr;
+	return (1);
+}
+
+bool	parse_args(t_struct *ptr, char **av)
+{
 	
-	if (!(ac > 1 && parse_args(&ptr, av + 1)))
-			return (exit_error(0));
-	return (0);
+	check_map(*av);
+	return (1);
 }

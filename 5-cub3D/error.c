@@ -1,22 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   error.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/08 02:14:34 by anradix           #+#    #+#             */
-/*   Updated: 2019/12/08 02:48:28 by anradix          ###   ########.fr       */
+/*   Created: 2019/12/08 02:30:58 by anradix           #+#    #+#             */
+/*   Updated: 2019/12/08 02:33:48 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		main(int ac, char **av)
+int		exit_error(int n)
 {
-	t_struct	ptr;
-	
-	if (!(ac > 1 && parse_args(&ptr, av + 1)))
-			return (exit_error(0));
-	return (0);
+	if (n == 0)
+			printf("Error, bad input\nUsage: ./cub3d [map.cub]\n");
+	return (EXIT_FAILURE);
 }

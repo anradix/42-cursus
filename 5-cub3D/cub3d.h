@@ -1,22 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/08 02:14:34 by anradix           #+#    #+#             */
-/*   Updated: 2019/12/08 02:48:28 by anradix          ###   ########.fr       */
+/*   Created: 2019/12/08 02:15:13 by anradix           #+#    #+#             */
+/*   Updated: 2019/12/08 02:35:38 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef CUB3D_H
+# define CUB3D_H
 
-int		main(int ac, char **av)
+#include <stdio.h>
+#include <unistd.h>
+#include <stdlib.h>
+#include <stdbool.h>
+
+typedef struct	s_struct
 {
-	t_struct	ptr;
-	
-	if (!(ac > 1 && parse_args(&ptr, av + 1)))
-			return (exit_error(0));
-	return (0);
-}
+	int i;
+
+
+}	t_struct;
+
+bool	parse_args(t_struct *ptr, char **av);
+
+/*
+** Utils
+*/
+int		exit_error(int n);
+#endif
