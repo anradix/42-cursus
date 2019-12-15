@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/08 02:15:13 by anradix           #+#    #+#             */
-/*   Updated: 2019/12/08 23:44:55 by anradix          ###   ########.fr       */
+/*   Updated: 2019/12/15 20:55:16 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,10 @@ typedef struct	s_struct
 {
 	void	*mlx;
 	void	*win;
+	int		win_x;
+	int		win_y;
+	void	*surface;
+	char	*data;
 	int		state;
 }	t_struct;
 
