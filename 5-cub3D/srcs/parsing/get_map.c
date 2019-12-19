@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   get_map.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/12/18 06:16:25 by anradix           #+#    #+#             */
-/*   Updated: 2019/12/19 12:00:49 by anradix          ###   ########.fr       */
+/*   Created: 2019/12/19 11:50:42 by anradix           #+#    #+#             */
+/*   Updated: 2019/12/19 11:51:24 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int		main(int ac, char **av)
+bool	get_map(const char *file, size_t i)
 {
-	t_game		gameptr;
-	t_window	windowptr;
-
-	(ac == 2 && parsing(av[1])) ? run(&gameptr, &windowptr)
-	: write(1, "Error\nUsage: ./cub3d [map.cub]\n", 25);
-	return (0);
+	return (1);
 }
