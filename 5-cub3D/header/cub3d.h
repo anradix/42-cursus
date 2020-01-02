@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 06:17:20 by anradix           #+#    #+#             */
-/*   Updated: 2019/12/19 11:51:51 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/02 14:44:09 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,24 +22,29 @@
 # include <stdio.h>
 # include "lib.h"
 
-# ifndef BUFF_SIZE
-#  define BUFF_SIZE 100
-# endif
+#ifndef BUFF_SIZE
+# define BUFF_SIZE 100
+#endif
 
 typedef struct s_game
 {
+	char	floor_color[4];
+	char	ceiling_color[4];
+	char	*map;
 	int		tmp;
 }			t_game;
 
 typedef struct s_window
 {
+	void	*mlx_ptr;
+	void	*mlx_win;
 	int		height;
 	int		width;
 }			t_window;
 
-bool	parsing(const char *arg);
-char	*get_file(const char *arg);
-bool	get_map_info(const char *file);
-bool	get_map(const char *file, size_t i);
-void	run(t_game *gameptr, t_window *winptr);
+bool	parsing(const char *map, t_game *gameptr, t_window *windowptr);
+char	*get_map(const char *map);
+bool	get_map_infos(t_game *gameptr, t_window *windowptr, char *map);
+bool	init_env(t_game *gameptr, t_window *windowptr);
+bool	test_mlx(t_game *gameptr, t_window *windowptr);
 #endif
