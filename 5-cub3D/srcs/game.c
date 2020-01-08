@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 17:28:45 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/08 17:26:11 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/08 19:20:04 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ void	get_textures(main_struct *s_ptr)
 
 	s_ptr->map.wall_n = mlx_xpm_file_to_image(s_ptr->mlx.mlx_init, s_ptr->map.path_wall_n, &h, &w);
 	s_ptr->map.wall_n = mlx_get_data_addr(s_ptr->map.wall_n, &s_ptr->mlx.bpp, &s_ptr->mlx.sline, &s_ptr->mlx.endian);
-	// ---
 	s_ptr->map.wall_s = mlx_xpm_file_to_image(s_ptr->mlx.mlx_init, s_ptr->map.path_wall_s, &h, &w);
 	s_ptr->map.wall_s = mlx_get_data_addr(s_ptr->map.wall_s, &s_ptr->mlx.bpp, &s_ptr->mlx.sline, &s_ptr->mlx.endian);
-	// ---
 	s_ptr->map.wall_e = mlx_xpm_file_to_image(s_ptr->mlx.mlx_init, s_ptr->map.path_wall_e, &h, &w);
 	s_ptr->map.wall_e = mlx_get_data_addr(s_ptr->map.wall_e, &s_ptr->mlx.bpp, &s_ptr->mlx.sline, &s_ptr->mlx.endian);
-	// ---
 	s_ptr->map.wall_w = mlx_xpm_file_to_image(s_ptr->mlx.mlx_init, s_ptr->map.path_wall_w, &h, &w);
 	s_ptr->map.wall_w = mlx_get_data_addr(s_ptr->map.wall_w, &s_ptr->mlx.bpp, &s_ptr->mlx.sline, &s_ptr->mlx.endian);
 }
