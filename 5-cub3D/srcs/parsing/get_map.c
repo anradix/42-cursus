@@ -6,19 +6,23 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/01 10:16:17 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/08 15:19:15 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/08 16:57:29 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-bool	get_map_infos(const char *map, t_game *g_ptr, t_window *w_ptr)
+bool	get_map_infos(main_struct *s_ptr)
 {
-	w_ptr->height = 800;
-	w_ptr->width = 300;
-	g_ptr->map = (char *)map;
+	s_ptr->map.height = 800;
+	s_ptr->map.width = 300;
+	s_ptr->map.path_wall_n =  "./textures/wall_n.xpm";
+	s_ptr->map.path_wall_s =  "./textures/wall_s.xpm";
+	s_ptr->map.path_wall_e =  "./textures/wall_e.xpm";
+	s_ptr->map.path_wall_w =  "./textures/wall_w.xpm";
 	return (1);
 }
+
 char	*get_map(const char *map)
 {
 	char	*file;
@@ -43,4 +47,3 @@ char	*get_map(const char *map)
 	}
 	return (file);
 }
-
