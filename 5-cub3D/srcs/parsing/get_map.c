@@ -6,28 +6,22 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/01 10:16:17 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/02 14:43:49 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/08 15:19:15 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-bool	get_map_infos(t_game *gameptr, t_window *windowptr, char *map)
+bool	get_map_infos(const char *map, t_game *g_ptr, t_window *w_ptr)
 {
-	windowptr->height = 400;
-	windowptr->width = 200;
-	gameptr->map = map;
-	gameptr->floor_color[0] = 10;
-	gameptr->floor_color[1] = 10;
-	gameptr->floor_color[2] = 10;
-	gameptr->ceiling_color[0] = 110;
-	gameptr->ceiling_color[1] = 110;
-	gameptr->ceiling_color[2] = 110;
+	w_ptr->height = 800;
+	w_ptr->width = 300;
+	g_ptr->map = (char *)map;
 	return (1);
 }
 char	*get_map(const char *map)
 {
-	char	*file;;
+	char	*file;
 	char	*tmp;
 	char	buff[BUFF_SIZE + 1];
 	int		fd;
