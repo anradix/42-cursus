@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/07 17:28:45 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/08 19:20:04 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/14 13:38:03 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,25 @@ void	get_textures(main_struct *s_ptr)
 	s_ptr->map.wall_w = mlx_xpm_file_to_image(s_ptr->mlx.mlx_init, s_ptr->map.path_wall_w, &h, &w);
 	s_ptr->map.wall_w = mlx_get_data_addr(s_ptr->map.wall_w, &s_ptr->mlx.bpp, &s_ptr->mlx.sline, &s_ptr->mlx.endian);
 }
+/* EXPERIMENTATIONS */o
 
-int		update_win()
+void	update_pos(main_struct *s_ptr)
 {
+	 if (s_ptr->key.up)
+		go_up();
+	 if (s_ptr->key.down)
+		go_down();
+	 if (s_ptr->key.right)
+		go_right();
+	 if (s_ptr->key.left)
+		go_left();
+
+
+}
+
+int	update_win(main_struct *s_ptr)
+{
+	update_pos(s_ptr);
 	return (0);
 }
 
@@ -44,6 +60,7 @@ bool	run_game(main_struct *s_ptr)
 	get_textures(s_ptr);
 	mlx_hook(s_ptr->mlx.win, 2, 0, key_press, s_ptr);
 	mlx_hook(s_ptr->mlx.win, 3, 0, key_release, s_ptr);
+	// OK 
 	mlx_loop_hook(s_ptr->mlx.mlx_init, update_win, s_ptr);
 	mlx_loop(s_ptr->mlx.mlx_init);
 	return (0);

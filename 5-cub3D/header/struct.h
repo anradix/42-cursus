@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/08 16:16:58 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/08 16:55:08 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/14 13:08:57 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,11 @@
 
 typedef struct s_key
 {
-	int		esc;
+	int	esc;
+	int	up
+	int	down;
+	int	right;
+	int	left;
 }	t_key;
 
 typedef struct s_mlx
@@ -24,16 +28,16 @@ typedef struct s_mlx
 	void	*win;
 	void	*img;
 	char	*img_buff;
-	int		bpp;
-	int		sline;
-	int		endian;
+	int	bpp;
+	int	sline;
+	int	endian;
 }	t_mlx;
 
 typedef	struct s_map
 {
 	char	*f_map;
-	int		height;
-	int		width;
+	int	height;
+	int	width;
 	void	*path_wall_n;
 	void	*path_wall_s;
 	void	*path_wall_e;

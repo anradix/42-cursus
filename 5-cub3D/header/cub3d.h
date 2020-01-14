@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/18 06:17:20 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/08 17:29:01 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/14 12:35:36 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,6 @@ bool	get_map_infos(main_struct *s_ptr);
 
 // GAME
 bool	run_game(main_struct *s_ptr);
-int		key_press(int key, main_struct *g_ptr);
-int		key_release(int key, main_struct *s_ptr);
+int	key_press(int key, main_struct *g_ptr);
+int	key_release(int key, main_struct *s_ptr);
 #endif
