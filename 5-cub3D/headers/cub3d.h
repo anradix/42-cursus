@@ -1,18 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   raycast.c                                          :+:      :+:    :+:   */
+/*   cub3d.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/16 04:06:46 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/16 04:17:03 by anradix          ###   ########.fr       */
+/*   Created: 2020/01/16 06:58:28 by anradix           #+#    #+#             */
+/*   Updated: 2020/01/16 09:09:17 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+#ifndef CUB3D_H
+# define CUB3D_H
 
-int		loop_raycast(main_struct *s_ptr)
-{
-	return (0);
-}
+# include "mylib.h"
+# include "define.h"
+# include "struct.h"
+# include "mlx.h"
+# include <stdlib.h>
+
+#include <stdio.h>
+
+int		parsing(const char *file_path, main_strct *m_ptr);
+int		run(main_strct *m_ptr);
+
+#endif 
