@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/01 10:16:17 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/08 16:57:29 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/16 05:12:29 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 
 bool	get_map_infos(main_struct *s_ptr)
 {
-	s_ptr->map.height = 800;
-	s_ptr->map.width = 300;
+	s_ptr->map.height = 1600;
+	s_ptr->map.width = 720;
 	s_ptr->map.path_wall_n =  "./textures/wall_n.xpm";
 	s_ptr->map.path_wall_s =  "./textures/wall_s.xpm";
 	s_ptr->map.path_wall_e =  "./textures/wall_e.xpm";
