@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 06:58:28 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/16 09:09:17 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/31 11:06:13 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,12 @@
 # include "struct.h"
 # include "mlx.h"
 # include <stdlib.h>
+# include <math.h>
 
 #include <stdio.h>
 
 int		parsing(const char *file_path, main_strct *m_ptr);
 int		run(main_strct *m_ptr);
+void	raycasting(main_strct *m_ptr);
 
 #endif 

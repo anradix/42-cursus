@@ -6,12 +6,21 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/16 07:05:02 by anradix           #+#    #+#             */
-/*   Updated: 2020/01/16 18:20:31 by anradix          ###   ########.fr       */
+/*   Updated: 2020/01/31 11:10:30 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef STRUCT_H
 # define STRUCT_H
+
+typedef struct player_struct
+{
+}	player_strct;
+
+
+typedef struct camera_srtuct
+{
+}	camera_strct;
 
 typedef struct mlx_strcut
 {
@@ -19,13 +28,11 @@ typedef struct mlx_strcut
 	void *win;
 	void *img;
 	char *img_buff;
-	int bpp;
-	int sline;
-	int endian;
 }	mlx_strct;
 
 typedef struct map_struct
 {
+	char *map;
 	int width;
 	int	height;
 }	map_strct;
@@ -44,11 +51,11 @@ typedef struct textures_struct
 
 typedef struct main_struct
 {
-	int ii;
-	int jj;
-	mlx_strct mlx;
-	map_strct map;
-	textures_strct textures;
+	mlx_strct		mlx;
+	map_strct		map;
+	textures_strct	textures;
+	camera_strct	camera;
+	player_strct	player;
 }	main_strct;
 
 #endif

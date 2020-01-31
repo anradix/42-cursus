@@ -1,5 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
 /*                                                        :::      ::::::::   */
 /*   parsing.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
@@ -31,6 +29,7 @@ int		parsing(const char *file_path, main_strct *m_ptr)
 
 	if (!(file = i_file(file_path)))
 		return (CANNOT_IMPORT_MAP);
+	m_ptr->map.map = file;
 	if (!get_map_infos(file, m_ptr))// || !(m_ptr->map.fmap = get_map(file)))
 	{
 		free(file);
