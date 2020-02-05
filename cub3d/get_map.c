@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 16:07:58 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/03 17:32:40 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/04 22:14:25 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,11 +14,11 @@
 
 bool	parse_map(main_strct *m_ptr)
 {
-	g_windows_width = 700;
-	g_windows_height = 600;
 	g_map_num_rows = 11;
 	g_map_num_cols = 15;
 	g_tile_size = 32;
+	g_windows_width = g_map_num_cols * g_tile_size;
+	g_windows_height = g_map_num_rows * g_tile_size;
 	return (1);
 }
 

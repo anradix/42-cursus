@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 15:51:08 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/03 17:32:16 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/04 19:46:17 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,5 +24,7 @@
 bool	get_map(const char *file_path, main_strct *m_ptr);
 bool	game_loop(main_strct *m_ptr);
 int		key_press(int key, main_strct *m_ptr);
+bool	render(main_strct *m_ptr);
+void	load_mini_map(main_strct *m_ptr);
 
 #endif
