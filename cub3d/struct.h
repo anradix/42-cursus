@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/03 16:00:51 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/04 19:47:47 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/05 16:27:59 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ typedef struct s_mlx
 	int endian;
 	void *img;
 	int	*addr;
+	int	**iaddr;
 }	mlx_strct;
 
 typedef struct s_main

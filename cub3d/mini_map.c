@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/04 19:24:26 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/05 01:10:33 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/05 17:25:12 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ void	draw_block(main_strct *m_ptr, int i, int j, int pos)
 
 	value :  i = 0, j = 0;
 	. -> 0, 0
-	. >  0, 1
+	. >  0, 
 	. -> 0, 2
 
 	. -> 1, 0,
@@ -57,9 +57,28 @@ void	draw_block(main_strct *m_ptr, int i, int j, int pos)
 
 }
 
+int		*m_fflatten(int  **tab, size_t x, size_t y)
+{
+	size_t	i;
+	size_t	j;
+	void	*s;
+
+	if (!(s = (int *)malloc(sizeof(int) * (x * y))))
+		return (NULL);
+/*	j = 0;
+	while (y > 0)
+	{
+		i = 0;
+		while (i < x)
+			((unsigned char*)s)[j++] = ((unsigned char**)tab)[y][i++];
+		y--;
+	}*/
+	return (s);
+}
+
 void	load_mini_map(main_strct *m_ptr)
 {
-	int i;
+/*	int i;
 	int j;
 	int pos;
 
@@ -78,7 +97,18 @@ void	load_mini_map(main_strct *m_ptr)
 		}
 		i++;
 	}
-//	draw_mini_map(m_ptr);
-	// penser a splitter img et a unsplit a la fin
-
+	*/
+	int i = 0;
+	while (i < 10)
+	{
+		m_ptr->mlx.iaddr[i][0] = 8900331;	
+		i++;
+	}
+	i = 0;
+	while (i < 10)
+	{
+		m_ptr->mlx.addr[i] = m_ptr->mlx.iaddr[0][i];
+		i++;
+	}
+	//	draw_mini_map(m_ptr);
 }
