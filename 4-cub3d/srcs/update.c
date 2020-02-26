@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:33:20 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/25 23:39:44 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/26 20:02:03 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int map_wall(float x, float y)
 {
-    if (x < 0 || x > WINDOW_WIDTH || y < 0 || y > WINDOW_HEIGHT) {
-        return TRUE;
+    if (x < 0 || x > WINDOW_WIDTH || y < 0 || y > WINDOW_HEIGHT)
+	{
+		return TRUE;
     }
     int mapGridIndexX = floor(x / TILE_SIZE);
     int mapGridIndexY = floor(y / TILE_SIZE);
@@ -41,5 +42,5 @@ void	update(t_struct *s)
 	float deltaTime = 0.09;
 
 	move_player(deltaTime, s);
-//cast_all_rays();
+	//cast_all_rays();
 }
