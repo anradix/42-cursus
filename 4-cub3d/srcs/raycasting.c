@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 22:08:41 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/27 18:38:26 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/27 22:38:47 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,11 +172,10 @@ void castRay(float rayAngle, int stripId, t_struct *s, t_rays rays)
 
 void	cast_all_rays(t_struct *s, t_rays rays)
 {
-
 	int		stripId = 0;
 	float ray_angle = s->player.rotationAngle - (FOV_ANGLE  / 2);
 	
-	while (stripId < 2)
+	while (stripId < NUM_RAYS)
 	{
 		castRay(ray_angle, stripId, s, rays);
 		ray_angle += FOV_ANGLE / NUM_RAYS;
