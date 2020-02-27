@@ -6,13 +6,13 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:33:20 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/26 20:02:03 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/27 18:35:31 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
 
-int map_wall(float x, float y)
+int		map_wall(float x, float y)
 {
     if (x < 0 || x > WINDOW_WIDTH || y < 0 || y > WINDOW_HEIGHT)
 	{
@@ -23,7 +23,7 @@ int map_wall(float x, float y)
     return map[mapGridIndexY][mapGridIndexX] != 0;
 }
 
-void move_player(float deltaTime, t_struct *s)
+void	move_player(float deltaTime, t_struct *s)
 {
     s->player.rotationAngle += s->player.turnDirection * s->player.turnSpeed * deltaTime;
     float moveStep = s->player.walkDirection * s->player.walkSpeed * deltaTime;
@@ -39,8 +39,11 @@ void move_player(float deltaTime, t_struct *s)
 
 void	update(t_struct *s)
 {
+	t_rays rays;
+
 	float deltaTime = 0.09;
 
 	move_player(deltaTime, s);
-	//cast_all_rays();
+	cast_all_rays(s, rays);
+	render(*s);
 }

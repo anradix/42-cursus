@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 19:59:31 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/25 22:18:46 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/27 18:38:13 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,23 @@ typedef struct s_mlx
 	int		bpp;
 	int		size_line;
 }	t_mlx;
+
+typedef struct ray
+{
+    float rayAngle;
+    float wallHitX;
+    float wallHitY;
+    float distance;
+    int wasHitVertical;
+    int isRayFacingUp;
+    int isRayFacingDown;
+    int isRayFacingLeft;
+    int isRayFacingRight;
+    int wallHitContent;
+	int i;
+} t_rays[NUM_RAYS];
+
+
 
 typedef struct s_struct
 {

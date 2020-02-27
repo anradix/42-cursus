@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/26 20:11:12 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/27 14:51:30 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@ void	render_map(int **buffer)
 
 void render_player(int **buffer, t_struct s)
 {
-	printf("x = %f || y = %f\n", s.player.x, s.player.y);
 	draw_square(buffer,
 		s.player.x * MINIMAP_SCALE_FACTOR,
 		s.player.y * MINIMAP_SCALE_FACTOR,
