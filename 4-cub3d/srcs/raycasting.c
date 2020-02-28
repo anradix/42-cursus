@@ -6,7 +6,11 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 22:08:41 by anradix           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/02/27 22:10:02 by anradix          ###   ########.fr       */
+=======
+/*   Updated: 2020/02/27 22:38:47 by anradix          ###   ########.fr       */
+>>>>>>> 41c8a57e3d913949ca54f13713f7286cad41c187
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -172,13 +176,18 @@ void castRay(float rayAngle, int stripId, t_struct *s, t_rays rays)
 */
 void	cast_all_rays(t_struct s)
 {
-
 	int		stripId = 0;
+<<<<<<< HEAD
 	float ray_angle = s.player.rotationAngle - (FOV_ANGLE  / 2);
 
 
 /*	
 	while (stripId < 2)
+=======
+	float ray_angle = s->player.rotationAngle - (FOV_ANGLE  / 2);
+	
+	while (stripId < NUM_RAYS)
+>>>>>>> 41c8a57e3d913949ca54f13713f7286cad41c187
 	{
 		castRay(ray_angle, stripId, s, rays);
 		ray_angle += FOV_ANGLE / NUM_RAYS;

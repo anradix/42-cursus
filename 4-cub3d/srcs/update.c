@@ -6,7 +6,11 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:33:20 by anradix           #+#    #+#             */
+<<<<<<< HEAD
 /*   Updated: 2020/02/27 22:36:39 by anradix          ###   ########.fr       */
+=======
+/*   Updated: 2020/02/27 22:38:01 by anradix          ###   ########.fr       */
+>>>>>>> 41c8a57e3d913949ca54f13713f7286cad41c187
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,10 +43,19 @@ void	move_player(float deltaTime, t_struct *s)
 
 void	update(t_struct *s)
 {
+<<<<<<< HEAD
+=======
+	t_rays rays;
+>>>>>>> 41c8a57e3d913949ca54f13713f7286cad41c187
 
 	float deltaTime = 0.09;
 
 	move_player(deltaTime, s);
+<<<<<<< HEAD
 	//cast_all_rays(*s);
 	
+=======
+	cast_all_rays(s, rays);
+	render(*s, rays);
+>>>>>>> 41c8a57e3d913949ca54f13713f7286cad41c187
 }
