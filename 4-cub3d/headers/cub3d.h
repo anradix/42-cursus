@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 21:36:12 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/27 21:56:52 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/27 22:06:44 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		key_press(int key, t_struct *s);
 int		key_release(int key, t_struct *s);
 
 
-void	cast_all_rays(t_struct *s, t_rays rays);
+void	cast_all_rays(t_struct s);
 
 void	draw_square(int **buffer, size_t posX, size_t posY, size_t tileSize, int color);
 void	draw_line(int **buffer, int xdep, int ydep, int xfin, int yfin, int color);

@@ -6,12 +6,12 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/26 22:08:41 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/27 18:38:26 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/27 22:10:02 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
-
+/*
 float normalizeAngle(float angle)
 {
     angle = remainder(angle, TWO_PI);
@@ -169,17 +169,19 @@ void castRay(float rayAngle, int stripId, t_struct *s, t_rays rays)
 	rays[stripId].isRayFacingLeft = isRayFacingLeft;
 	rays[stripId].isRayFacingRight = isRayFacingRight;
 }
-
-void	cast_all_rays(t_struct *s, t_rays rays)
+*/
+void	cast_all_rays(t_struct s)
 {
 
 	int		stripId = 0;
-	float ray_angle = s->player.rotationAngle - (FOV_ANGLE  / 2);
-	
+	float ray_angle = s.player.rotationAngle - (FOV_ANGLE  / 2);
+
+
+/*	
 	while (stripId < 2)
 	{
 		castRay(ray_angle, stripId, s, rays);
 		ray_angle += FOV_ANGLE / NUM_RAYS;
 		stripId++;
-	}
+	}*/
 }
