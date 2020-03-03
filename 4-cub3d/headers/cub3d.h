@@ -6,11 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 21:36:12 by anradix           #+#    #+#             */
-<<<<<<< HEAD
-/*   Updated: 2020/02/27 22:06:44 by anradix          ###   ########.fr       */
-=======
-/*   Updated: 2020/02/27 22:26:32 by anradix          ###   ########.fr       */
->>>>>>> 41c8a57e3d913949ca54f13713f7286cad41c187
+/*   Updated: 2020/03/02 13:57:02 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,15 +35,14 @@ int		key_press(int key, t_struct *s);
 int		key_release(int key, t_struct *s);
 
 
-void	cast_all_rays(t_struct s);
+void	cast_all_rays(t_struct *s, t_rays rays);
 
 void	draw_square(int **buffer, size_t posX, size_t posY, size_t tileSize, int color);
 void	draw_line(int **buffer, int xdep, int ydep, int xfin, int yfin, int color);
 void	buffer_to_image(int **buffer, t_struct s);
 
 void	render(t_struct s, t_rays rays);
-void	render_player(int **buffer, t_struct s);
-void	render_map(int **buffer);
 void	render_rays(int **buffer, t_struct s, t_rays rays);
+void	render_minimap(int **buffer, t_struct s);
 
 # endif

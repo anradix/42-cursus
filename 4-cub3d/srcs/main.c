@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:02:07 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/27 16:12:32 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/03 23:13:39 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,17 @@ int map[MAP_NUM_ROWS][MAP_NUM_COLS] = {
 
 int		main(int argc, char **argv)
 {
+	int width = 6;
+	int height = 3;
+	
+	int tofind = 12;
+	int y = 0;
+	int x = 0;
+	while (width * y < tofind)
+		y++;
+	while ((y * width) - x > tofind)
+		x++;
+	x = width - x;
 	t_struct s;
 
 	if (argc < 2)

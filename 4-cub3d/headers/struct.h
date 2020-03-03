@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 19:59:31 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/27 22:12:59 by anradix          ###   ########.fr       */
+/*   Updated: 2020/02/27 21:58:34 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ typedef struct s_struct
 {
 	t_mlx		mlx;
 	t_player	player;
-	t_rays		rays;
+	t_rays		*rays;
 }	t_struct;
 
 #endif

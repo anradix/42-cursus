@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   render_map.c                                       :+:      :+:    :+:   */
+/*   minimap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/27 21:44:23 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/27 21:45:01 by anradix          ###   ########.fr       */
+/*   Created: 2020/03/02 13:55:02 by anradix           #+#    #+#             */
+/*   Updated: 2020/03/02 14:02:03 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3d.h"
+# include "cub3d.h"
 
 void	render_map(int **buffer)
 {
@@ -28,9 +28,29 @@ void	render_map(int **buffer)
 		{
 			posJ = j * (TILE_SIZE * MINIMAP_SCALE_FACTOR);
 			if (map[i][j] == 1)
-				draw_square(buffer, posJ, posI,	TILE_SIZE * MINIMAP_SCALE_FACTOR, 8900331);
+				draw_square(buffer, posJ, posI,	TILE_SIZE * MINIMAP_SCALE_FACTOR + 1, 8900331);
 			j++;
 		}
 		i++;
 	}
+}
+
+void	render_player(int **buffer, t_struct s)
+{
+	draw_square(buffer,
+		(s.player.x - 6) * MINIMAP_SCALE_FACTOR,
+		(s.player.y - 6)  * MINIMAP_SCALE_FACTOR,
+		s.player.width * (MINIMAP_SCALE_FACTOR * 12), 8900331);
+
+	draw_line(buffer,
+    (int)((MINIMAP_SCALE_FACTOR * s.player.x)),
+    (int)((MINIMAP_SCALE_FACTOR * s.player.y)),
+    (int)(MINIMAP_SCALE_FACTOR * (s.player.x + cos(s.player.rotationAngle) * 40)),
+    (int)(MINIMAP_SCALE_FACTOR * (s.player.y + sin(s.player.rotationAngle) * 40)), 8900331);
+}
+
+void	render_minimap(int **buffer, t_struct s)
+{
+	render_map(buffer);
+	render_player(buffer, s);
 }
