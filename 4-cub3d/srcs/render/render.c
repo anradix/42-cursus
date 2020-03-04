@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/03 23:27:05 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/04 18:00:23 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 {
 	int i = 0;
+	int x;
 	
 	while (i < NUM_RAYS)
 	{
@@ -32,7 +33,8 @@ void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 		int j = wallTopPixel;
 		while (j < wallBottomPixel)
 		{
-			s.mlx.img[(WINDOW_WIDTH * j) + i] = 15418368;
+			x = (WINDOW_WIDTH * j) + i;
+			buffer[x / WINDOW_WIDTH][x % WINDOW_WIDTH] = 15418368;
 			j++;
 		}	
 		i++;
@@ -56,10 +58,10 @@ void	render(t_struct s, t_rays rays)
 
 	buffer = m_tab(WINDOW_WIDTH, WINDOW_HEIGHT, 0);
 
-	//render_rays(buffer, s, rays);
 	generate3dprojection(buffer, s, rays);
-//	render_minimap(buffer, s);
-	//buffer_to_image(buffer, s);
+	render_minimap(buffer, s);
+	render_rays(buffer, s, rays);
+	buffer_to_image(buffer, s);
 	int i = WINDOW_HEIGHT;
 	while (i-- > 0)
 		free(buffer[i]);

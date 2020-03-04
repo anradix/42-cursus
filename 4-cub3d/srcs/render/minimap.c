@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 13:55:02 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/02 14:02:03 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/04 17:50:36 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,9 @@ void	render_map(int **buffer)
 		{
 			posJ = j * (TILE_SIZE * MINIMAP_SCALE_FACTOR);
 			if (map[i][j] == 1)
-				draw_square(buffer, posJ, posI,	TILE_SIZE * MINIMAP_SCALE_FACTOR + 1, 8900331);
+				draw_square(buffer, posJ, posI,	TILE_SIZE *	MINIMAP_SCALE_FACTOR + 1, 8900331);
+			else if (map[i][j] != 1 && i < MAP_NUM_COLS - 7)
+				draw_square(buffer, posJ, posI,	TILE_SIZE *	MINIMAP_SCALE_FACTOR + 1, 0);
 			j++;
 		}
 		i++;
