@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/04 18:00:23 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/05 13:28:28 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,15 +41,22 @@ void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 	}
 }
 
-void	clean_img(t_struct s)
+
+void	back_groud(int **buffer)
 {
 	int i = 0;
+	int j;
 
-	while (i < (WINDOW_WIDTH * WINDOW_HEIGHT))
+	while (i < WINDOW_HEIGHT)
 	{
-		s.mlx.img[i] = 0;
+		j = 0;
+		while (j < WINDOW_WIDTH)
+		{
+			buffer[i][j] = (i < (WINDOW_HEIGHT / 2)) ? 16639453 : 8549746;
+			j++;
+		}
 		i++;
-	}
+}
 }
 
 void	render(t_struct s, t_rays rays)
@@ -58,13 +65,12 @@ void	render(t_struct s, t_rays rays)
 
 	buffer = m_tab(WINDOW_WIDTH, WINDOW_HEIGHT, 0);
 
+	back_groud(buffer);
 	generate3dprojection(buffer, s, rays);
-	render_minimap(buffer, s);
-	render_rays(buffer, s, rays);
+	render_minimap(buffer, s, rays);
 	buffer_to_image(buffer, s);
 	int i = WINDOW_HEIGHT;
 	while (i-- > 0)
 		free(buffer[i]);
 	mlx_put_image_to_window(s.mlx.id, s.mlx.win, s.mlx.img_id, 0, 0);
-	clean_img(s);
 }

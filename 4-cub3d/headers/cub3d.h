@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 21:36:12 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/04 18:00:23 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/04 18:28:26 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,6 @@ void	draw_line(int **buffer, int xdep, int ydep, int xfin, int yfin, int color);
 void	buffer_to_image(int **buffer, t_struct s);
 
 void	render(t_struct s, t_rays rays);
-void	render_rays(int **buffer, t_struct s, t_rays rays);
-void	render_minimap(int **buffer, t_struct s);
+void	render_minimap(int **buffer, t_struct s, t_rays rays);
 
 # endif
