@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/05 13:28:28 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/05 17:23:48 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,9 @@ void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 	
 	while (i < NUM_RAYS)
 	{
+		float perpDistance = rays[i].distance * cos(rays[i].rayAngle - s.player.rotationAngle);
 		float distanceProjectionPlan = (WINDOW_WIDTH / 2) / tan(FOV_ANGLE / 2);
-		float projectdWallHeight = (TILE_SIZE / rays[i].distance) * distanceProjectionPlan;
+		float projectdWallHeight = (TILE_SIZE / perpDistance) * distanceProjectionPlan;
 
 		int wallStripeHeight = projectdWallHeight;
 		
@@ -34,7 +35,8 @@ void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 		while (j < wallBottomPixel)
 		{
 			x = (WINDOW_WIDTH * j) + i;
-			buffer[x / WINDOW_WIDTH][x % WINDOW_WIDTH] = 15418368;
+			buffer[x / WINDOW_WIDTH][x % WINDOW_WIDTH] = 
+			(rays[i].wasHitVertical) ? 15418368 : 0;
 			j++;
 		}	
 		i++;
