@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:02:07 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/04 17:03:52 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/05 17:32:32 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		main(int argc, char **argv)
 
 	if (argc < 2)
 	{
-		printf("Error\nUsage: ./cub3d [map.cub]\n");
+		//printf("Error\nUsage: ./cub3d [map.cub]\n");
 		return (0);
 	}
 	setup(&s, argv[1]);
