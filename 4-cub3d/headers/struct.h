@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 19:59:31 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/27 21:58:34 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/09 22:04:04 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,6 @@ typedef struct ray
     int wallHitContent;
 	int i;
 } t_rays[NUM_RAYS];
-
-
 
 typedef struct s_struct
 {

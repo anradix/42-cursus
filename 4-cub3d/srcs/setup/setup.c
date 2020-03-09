@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:43:10 by anradix           #+#    #+#             */
-/*   Updated: 2020/02/25 22:35:01 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/09 22:05:25 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,7 @@ void	setup(t_struct *s, const char *file_path)
 {
 	setup_struct(&s->player);
 	setup_mlx(&s->mlx);
+
+	// TO DELET LATER
+	wallTexture = (uint32_t*)malloc(sizeof(uint32_t) * (uint32_t)TEXTURE_WIDTH * (uint32_t)TEXTURE_HEIGHT);
 }
