@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/05 18:03:26 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/09 23:57:21 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,33 @@ void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 		wallBottomPixel = wallBottomPixel > WINDOW_HEIGHT ? WINDOW_HEIGHT : wallBottomPixel;
 
 		int j = wallTopPixel;
+		// texture implementation
+		int textureOffsetX;
+
+
+
+		if (rays[i].wasHitVertical)
+		{
+			textureOffsetX = (int)rays[i].wallHitY % TILE_SIZE;
+		}
+		else
+		{
+			textureOffsetX = (int)rays[i].wallHitX % TILE_SIZE;
+		}
 		while (j < wallBottomPixel)
 		{
-			x = (WINDOW_WIDTH * j) + i;
+			/* old version with just one color
+			 x = (WINDOW_WIDTH * j) + i;
 			buffer[x / WINDOW_WIDTH][x % WINDOW_WIDTH] = 
 			(rays[i].wasHitVertical) ? 15418368 : 0;
+			j++;*/
+
+			int distanceFromTop = (j + (wallStripeHeight / 2)) - (WINDOW_HEIGHT / 2);
+			int textureOffsetY = distanceFromTop * ((float)TEXTURE_HEIGHT / wallStripeHeight);
+			uint32_t textelColor = wallTexture[(TEXTURE_WIDTH * textureOffsetY) + textureOffsetX];
+		
+			x = (WINDOW_WIDTH * j) + i;
+			buffer[x / WINDOW_WIDTH][x % WINDOW_WIDTH] = textelColor;
 			j++;
 		}	
 		i++;

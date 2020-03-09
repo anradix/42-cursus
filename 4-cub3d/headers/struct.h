@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 19:59:31 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/09 22:04:04 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/09 23:52:29 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,8 @@ typedef struct s_mlx
 	int		endian;
 	int		bpp;
 	int		size_line;
+	
+	void	*textu;
 }	t_mlx;
 
 typedef struct ray
