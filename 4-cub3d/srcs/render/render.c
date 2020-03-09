@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/05 17:23:48 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/05 18:03:26 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,13 @@ void	back_groud(int **buffer)
 			j++;
 		}
 		i++;
+	}
 }
+
+void	apply_textures(int **buffer, t_struct s, t_rays rays)
+{
+
+
 }
 
 void	render(t_struct s, t_rays rays)
@@ -70,6 +76,7 @@ void	render(t_struct s, t_rays rays)
 	back_groud(buffer);
 	generate3dprojection(buffer, s, rays);
 	render_minimap(buffer, s, rays);
+	apply_textures(buffer, s, rays);
 	buffer_to_image(buffer, s);
 	int i = WINDOW_HEIGHT;
 	while (i-- > 0)

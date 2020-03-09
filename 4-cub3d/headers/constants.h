@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:01:44 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/04 18:16:23 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/05 18:06:15 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,9 @@
 
 #define FPS 30
 #define FRAME_TIME_LENGTH (1000 / FPS)
+
+# define TEXTURE_WIDTH 64
+# define TEXTURE_HEIGHT 64
 
 #endif
 
