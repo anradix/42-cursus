@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 13:55:02 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/04 18:27:33 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/10 00:10:03 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	render_map(int **buffer)
 	size_t posJ;
 
 	i = 0;
-	while (i < MAP_NUM_COLS)
+	while (i < MAP_NUM_ROWS)
 	{
 		j = 0;
 		posI = i * (TILE_SIZE * MINIMAP_SCALE_FACTOR);

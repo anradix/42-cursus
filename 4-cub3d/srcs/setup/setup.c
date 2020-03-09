@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:43:10 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/09 22:05:25 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/10 00:09:18 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,4 +40,17 @@ void	setup(t_struct *s, const char *file_path)
 
 	// TO DELET LATER
 	wallTexture = (uint32_t*)malloc(sizeof(uint32_t) * (uint32_t)TEXTURE_WIDTH * (uint32_t)TEXTURE_HEIGHT);
+
+	for (int x = 0; x < TEXTURE_WIDTH; x++)
+	{
+		for (int y = 0; y < TEXTURE_HEIGHT; y++)
+		{
+			wallTexture[(TEXTURE_WIDTH * y) + x] = (x % 8 && y % 8) ?  15443079 : 0;
+		}
+	}
+
+	int a; int b;
+	s->mlx.textu = mlx_xpm_file_to_image(s->mlx.id, "file.xpm", &a, &b);
+
+	mlx_destroy_image (s->mlx.id, s->mlx.textu);
 }
