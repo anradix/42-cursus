@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:43:10 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/10 00:09:18 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/10 00:45:47 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,8 +49,8 @@ void	setup(t_struct *s, const char *file_path)
 		}
 	}
 
-	int a; int b;
-	s->mlx.textu = mlx_xpm_file_to_image(s->mlx.id, "file.xpm", &a, &b);
+	if (!(s->mlx.textu = mlx_xpm_file_to_image(s->mlx.id, "file.xpm", &s->mlx.textu_x, &s->mlx.textu_y)))
+		exit(EXIT_SUCCESS);
+	s->mlx.img_texu = (void *)mlx_get_data_addr(s->mlx.textu, &s->mlx.bpp, &s->mlx.size_line, &s->mlx.endian);
 
-	mlx_destroy_image (s->mlx.id, s->mlx.textu);
 }

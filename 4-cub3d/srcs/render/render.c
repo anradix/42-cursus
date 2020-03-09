@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/09 23:57:21 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/10 00:46:26 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,20 @@ void	back_groud(int **buffer)
 
 void	apply_textures(int **buffer, t_struct s, t_rays rays)
 {
-
+	int i = 0;
+	int y = 0;
+	int k = 0;
+	while (i < s.mlx.textu_y)
+	{
+		y = 0;
+		while (y < s.mlx.textu_x)
+		{
+		//	buffer[i][y] =  s.mlx.img_texu[k];
+			k++;
+			y++;
+		}
+		i++;
+	}
 
 }
 
