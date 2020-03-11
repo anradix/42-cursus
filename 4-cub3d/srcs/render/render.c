@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/11 06:53:15 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/11 08:37:04 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,13 +36,14 @@ void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 		int textureOffsetX;
 
 		if (rays[i].wasHitVertical)
-		{
 			textureOffsetX = (int)rays[i].wallHitY % TILE_SIZE;
-		}
 		else
-		{
 			textureOffsetX = (int)rays[i].wallHitX % TILE_SIZE;
-		}
+	
+		// on peu changer la texture en fonction du mur avec wallhitcontent si on modifie les valeurs de map quand on l'import
+		//printf("%d\n", rays[i].wallHitContent);
+
+		printf("%f\n", rays[i].rayAngle);
 		while (j < wallBottomPixel)
 		{
 			int test;

@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 19:59:31 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/10 00:38:09 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/11 08:38:33 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ typedef struct s_mlx
 	int		bpp;
 	int		size_line;
 	
-	int	*textu;
+	int		*textu;
 	int		textu_x;
 	int		textu_y;
 	int		*img_texu;
