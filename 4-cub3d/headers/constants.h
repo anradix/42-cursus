@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:01:44 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/11 06:45:40 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/11 07:11:03 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # define ARROW_UP 126
 # define ARROW_DOWN 125
 # define ARROW_LEFT 123
-# define ARROW_ RIGH 124
+# define ARROW_RIGH 124
 
 #define FALSE 0
 #define TRUE 1
