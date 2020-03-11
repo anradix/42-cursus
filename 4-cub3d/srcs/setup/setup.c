@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:43:10 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/10 00:45:47 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/11 06:53:38 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,11 @@ void	setup(t_struct *s, const char *file_path)
 	setup_struct(&s->player);
 	setup_mlx(&s->mlx);
 
-	// TO DELET LATER
-	wallTexture = (uint32_t*)malloc(sizeof(uint32_t) * (uint32_t)TEXTURE_WIDTH * (uint32_t)TEXTURE_HEIGHT);
-
-	for (int x = 0; x < TEXTURE_WIDTH; x++)
-	{
-		for (int y = 0; y < TEXTURE_HEIGHT; y++)
-		{
-			wallTexture[(TEXTURE_WIDTH * y) + x] = (x % 8 && y % 8) ?  15443079 : 0;
-		}
-	}
-
-	if (!(s->mlx.textu = mlx_xpm_file_to_image(s->mlx.id, "file.xpm", &s->mlx.textu_x, &s->mlx.textu_y)))
+	if (!(s->mlx.textu = mlx_xpm_file_to_image(s->mlx.id, "textures/stone.xpm", &s->mlx.textu_x, &s->mlx.textu_y)))
 		exit(EXIT_SUCCESS);
-	s->mlx.img_texu = (void *)mlx_get_data_addr(s->mlx.textu, &s->mlx.bpp, &s->mlx.size_line, &s->mlx.endian);
+	wallTexture[0] = (void *)mlx_get_data_addr(s->mlx.textu, &s->mlx.bpp, &s->mlx.size_line, &s->mlx.endian);
+	if (!(s->mlx.textu = mlx_xpm_file_to_image(s->mlx.id, "textures/redbrick.xpm", &s->mlx.textu_x, &s->mlx.textu_y)))
+		exit(EXIT_SUCCESS);
+	wallTexture[1] = (void *)mlx_get_data_addr(s->mlx.textu, &s->mlx.bpp, &s->mlx.size_line, &s->mlx.endian);
 
 }

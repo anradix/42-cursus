@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/10 00:46:26 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/11 06:53:15 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,8 +35,6 @@ void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 		// texture implementation
 		int textureOffsetX;
 
-
-
 		if (rays[i].wasHitVertical)
 		{
 			textureOffsetX = (int)rays[i].wallHitY % TILE_SIZE;
@@ -47,15 +45,16 @@ void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 		}
 		while (j < wallBottomPixel)
 		{
-			/* old version with just one color
-			 x = (WINDOW_WIDTH * j) + i;
-			buffer[x / WINDOW_WIDTH][x % WINDOW_WIDTH] = 
-			(rays[i].wasHitVertical) ? 15418368 : 0;
-			j++;*/
+			int test;
+
+			if (rays[i].wasHitVertical)
+				test = 1;
+			else
+				test = 0;
 
 			int distanceFromTop = (j + (wallStripeHeight / 2)) - (WINDOW_HEIGHT / 2);
-			int textureOffsetY = distanceFromTop * ((float)TEXTURE_HEIGHT / wallStripeHeight);
-			uint32_t textelColor = wallTexture[(TEXTURE_WIDTH * textureOffsetY) + textureOffsetX];
+			int textureOffsetY = distanceFromTop * ((float)s.mlx.textu_y / wallStripeHeight);
+			uint32_t textelColor = wallTexture[test][(s.mlx.textu_x * textureOffsetY) + textureOffsetX];
 		
 			x = (WINDOW_WIDTH * j) + i;
 			buffer[x / WINDOW_WIDTH][x % WINDOW_WIDTH] = textelColor;
@@ -83,25 +82,6 @@ void	back_groud(int **buffer)
 	}
 }
 
-void	apply_textures(int **buffer, t_struct s, t_rays rays)
-{
-	int i = 0;
-	int y = 0;
-	int k = 0;
-	while (i < s.mlx.textu_y)
-	{
-		y = 0;
-		while (y < s.mlx.textu_x)
-		{
-		//	buffer[i][y] =  s.mlx.img_texu[k];
-			k++;
-			y++;
-		}
-		i++;
-	}
-
-}
-
 void	render(t_struct s, t_rays rays)
 {
 	int  **buffer;
@@ -111,7 +91,6 @@ void	render(t_struct s, t_rays rays)
 	back_groud(buffer);
 	generate3dprojection(buffer, s, rays);
 	render_minimap(buffer, s, rays);
-	apply_textures(buffer, s, rays);
 	buffer_to_image(buffer, s);
 	int i = WINDOW_HEIGHT;
 	while (i-- > 0)

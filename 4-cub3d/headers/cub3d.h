@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 21:36:12 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/09 22:08:33 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/11 06:01:38 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@
 # include "mlx.h"
 
 int	map[MAP_NUM_ROWS][MAP_NUM_COLS];
-uint32_t *wallTexture;
+uint32_t *wallTexture[NUM_TEXTURES];
 
 void	setup(t_struct *s, const char *file_path);
 void	game_loop(t_struct s);
