@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:01:44 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/23 15:32:03 by anradix          ###   ########.fr       */
+/*   Updated: 2020/03/30 12:45:29 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@
 
 #define MINIMAP_SCALE_FACTOR 0.2
 
-#define WINDOW_WIDTH (MAP_NUM_COLS * TILE_SIZE) + 1
-#define WINDOW_HEIGHT (MAP_NUM_ROWS * TILE_SIZE) + 1
+#define WINDOW_WIDTH (MAP_NUM_COLS * TILE_SIZE)
+#define WINDOW_HEIGHT (MAP_NUM_ROWS * TILE_SIZE)
 
 #define FOV_ANGLE (60 * (PI / 180))
 
