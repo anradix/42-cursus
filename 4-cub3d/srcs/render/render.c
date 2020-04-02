@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:42:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/11 08:37:04 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/02 18:04:38 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ void	generate3dprojection(int **buffer, t_struct s, t_rays rays)
 }
 
 
-void	back_groud(int **buffer)
+void	fill_backgroud(int **buffer)
 {
 	int i = 0;
 	int j;
@@ -89,7 +89,7 @@ void	render(t_struct s, t_rays rays)
 
 	buffer = m_tab(WINDOW_WIDTH, WINDOW_HEIGHT, 0);
 
-	back_groud(buffer);
+	fill_backgroud(buffer);
 	generate3dprojection(buffer, s, rays);
 	render_minimap(buffer, s, rays);
 	buffer_to_image(buffer, s);
