@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 13:55:02 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/22 16:33:58 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/02 18:36:01 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,19 +39,18 @@ void	render_map(int **buffer)
 
 void	render_rays(int **buffer, t_struct s, t_rays rays)
 {
-	int i = 0;
+	int i;
 
-	while (i < NUM_RAYS)
-	{
+	i = -1;
+	while (++i < NUM_RAYS)
 		draw_line(buffer,
 			(int)((MINIMAP_SCALE_FACTOR * s.player.x)),
 			(int)((MINIMAP_SCALE_FACTOR * s.player.y)),
 			(int)((MINIMAP_SCALE_FACTOR * rays[i].wallHitX)),
 			(int)((MINIMAP_SCALE_FACTOR * rays[i].wallHitY)),
 			15418368);
-		i++;
-	}
 }
+
 void	render_player(int **buffer, t_struct s)
 {
 	draw_square(buffer,
