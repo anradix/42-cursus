@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:37:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/04/08 03:38:24 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/08 21:13:29 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,15 @@ int		key_press(int key, t_struct *s)
 	if (key == S_KEY)
         s->player.walkDirection = -1;
 	if (key == D_KEY)
-        s->player.walkDirection = +2;
+	{
+		s->player.walkDirection = +1;
+        s->player.left_right = 1;
+	}
 	if (key == A_KEY)
-        s->player.walkDirection = -2;
+	{
+		s->player.walkDirection = +1;
+        s->player.left_right = -1;
+	}
 	if (key == ARROW_RIGH)
         s->player.turnDirection = +1;
 	if (key == ARROW_LEFT)
@@ -39,9 +45,15 @@ int		key_release(int key, t_struct *s)
 	if (key == S_KEY)
         s->player.walkDirection = 0;
 	if (key == D_KEY)
+	{
+        s->player.left_right = 0;
         s->player.walkDirection = 0;
+	}
 	if (key == A_KEY)
+	{
+        s->player.left_right = 0;
         s->player.walkDirection = 0;
+	}
 	if (key == ARROW_RIGH)
         s->player.turnDirection = 0;
 	if (key == ARROW_LEFT)

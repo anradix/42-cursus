@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 19:59:31 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/11 08:38:33 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/08 20:46:37 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ typedef struct s_player
     float height;
     int turnDirection; // -1 for left, +1 for right
     int walkDirection; // -1 for back, +1 for front
+	int		left_right; // - 1 gauche 1 droite
     float rotationAngle;
     float walkSpeed;
     float turnSpeed;

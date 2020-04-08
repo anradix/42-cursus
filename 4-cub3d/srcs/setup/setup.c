@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:43:10 by anradix           #+#    #+#             */
-/*   Updated: 2020/04/02 18:27:45 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/08 20:49:26 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ void	setup_struct(t_player *player)
     player->height = 1;
     player->turnDirection = 0;
     player->walkDirection = 0;
+	player->left_right = 0;
     player->rotationAngle = PI / 2;
     player->walkSpeed = 400;
     player->turnSpeed = 250 * (PI / 180);
