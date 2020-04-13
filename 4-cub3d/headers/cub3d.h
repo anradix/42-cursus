@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 21:36:12 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/11 06:01:38 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/12 22:18:10 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	map[MAP_NUM_ROWS][MAP_NUM_COLS];
 uint32_t *wallTexture[NUM_TEXTURES];
 
 void	setup(t_struct *s, const char *file_path);
-void	game_loop(t_struct s);
+int		game_loop(t_struct s);
 void	update(t_struct *s);
 
 int		key_press(int key, t_struct *s);

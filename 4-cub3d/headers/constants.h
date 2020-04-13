@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:01:44 by anradix           #+#    #+#             */
-/*   Updated: 2020/03/30 12:45:29 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/12 21:46:55 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@
 #define MAP_NUM_ROWS 13
 #define MAP_NUM_COLS 20
 
-#define MINIMAP_SCALE_FACTOR 0.2
+#define MINIMAP_SCALE_FACTOR 0.17
 
 #define WINDOW_WIDTH (MAP_NUM_COLS * TILE_SIZE)
 #define WINDOW_HEIGHT (MAP_NUM_ROWS * TILE_SIZE)

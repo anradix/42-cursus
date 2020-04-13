@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:37:18 by anradix           #+#    #+#             */
-/*   Updated: 2020/04/08 21:13:29 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/12 22:18:54 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,7 @@ int		key_press(int key, t_struct *s)
         s->player.turnDirection = +1;
 	if (key == ARROW_LEFT)
         s->player.turnDirection = -1;
-	game_loop(*s);
-	return 0;
+	return (game_loop(*s));
 }
 
 int		key_release(int key, t_struct *s)
@@ -58,6 +57,5 @@ int		key_release(int key, t_struct *s)
         s->player.turnDirection = 0;
 	if (key == ARROW_LEFT)
         s->player.turnDirection = 0;
-	game_loop(*s);
 	return 0;
 }

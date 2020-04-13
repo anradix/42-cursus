@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 13:55:02 by anradix           #+#    #+#             */
-/*   Updated: 2020/04/02 18:36:01 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/13 15:10:38 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,19 @@ void	render_map(int **buffer)
 	size_t posI;
 	size_t posJ;
 
-	i = 0;
-	while (i < MAP_NUM_ROWS)
+	i = -1;
+	while (++i < MAP_NUM_ROWS)
 	{
-		j = 0;
-		posI = i * (TILE_SIZE * MINIMAP_SCALE_FACTOR);
-		while (j < MAP_NUM_COLS)
+		j = -1;
+		posI = i * (TILE_SIZE * MINIMAP_SCALE_FACTOR) + 12;
+		while (++j < MAP_NUM_COLS)
 		{
-			posJ = j * (TILE_SIZE * MINIMAP_SCALE_FACTOR);
+			posJ = j * (TILE_SIZE * MINIMAP_SCALE_FACTOR) + 12;
 			if (map[i][j] == 1)
-				draw_square(buffer, posJ, posI,	TILE_SIZE *	MINIMAP_SCALE_FACTOR + 1, 8900331);
-			else if (map[i][j] != 1 && i < MAP_NUM_COLS - 7)
-				draw_square(buffer, posJ, posI,	TILE_SIZE *	MINIMAP_SCALE_FACTOR + 1, 0);
-			j++;
+				draw_square(buffer, posJ, posI,	TILE_SIZE *	MINIMAP_SCALE_FACTOR+1, 8900331);
+			else if (map[i][j] != 1)
+				draw_square(buffer, posJ, posI,	TILE_SIZE *	MINIMAP_SCALE_FACTOR+1, 0);
 		}
-		i++;
 	}
 }
 
@@ -44,25 +42,22 @@ void	render_rays(int **buffer, t_struct s, t_rays rays)
 	i = -1;
 	while (++i < NUM_RAYS)
 		draw_line(buffer,
-			(int)((MINIMAP_SCALE_FACTOR * s.player.x)),
-			(int)((MINIMAP_SCALE_FACTOR * s.player.y)),
-			(int)((MINIMAP_SCALE_FACTOR * rays[i].wallHitX)),
-			(int)((MINIMAP_SCALE_FACTOR * rays[i].wallHitY)),
+			(int)((MINIMAP_SCALE_FACTOR * s.player.x + 12)),
+			(int)((MINIMAP_SCALE_FACTOR * s.player.y + 12)),
+			(int)((MINIMAP_SCALE_FACTOR * rays[i].wallHitX + 12)),
+			(int)((MINIMAP_SCALE_FACTOR * rays[i].wallHitY + 12)),
 			15418368);
 }
 
 void	render_player(int **buffer, t_struct s)
 {
-	draw_square(buffer,
-		(s.player.x - 6) * MINIMAP_SCALE_FACTOR,
-		(s.player.y - 6)  * MINIMAP_SCALE_FACTOR,
-		s.player.width * (MINIMAP_SCALE_FACTOR * 12), 8900331);
+	int player_size;
 
-	draw_line(buffer,
-    (int)((MINIMAP_SCALE_FACTOR * s.player.x)),
-    (int)((MINIMAP_SCALE_FACTOR * s.player.y)),
-    (int)(MINIMAP_SCALE_FACTOR * (s.player.x + cos(s.player.rotationAngle) * 40)),
-    (int)(MINIMAP_SCALE_FACTOR * (s.player.y + sin(s.player.rotationAngle) * 40)), 8900331);
+	player_size = 25;
+	draw_square(buffer,
+		(s.player.x -(player_size/2)) * MINIMAP_SCALE_FACTOR +12,
+		(s.player.y) * MINIMAP_SCALE_FACTOR + 12,
+		player_size * (MINIMAP_SCALE_FACTOR), 8900331);
 }
 
 void	render_minimap(int **buffer, t_struct s, t_rays rays)
