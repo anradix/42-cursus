@@ -6,11 +6,20 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:31:38 by anradix           #+#    #+#             */
-/*   Updated: 2020/04/12 22:18:50 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/13 15:38:47 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "cub3d.h"
+
+void	update(t_struct *s)
+{
+	t_rays rays;
+
+	move_player(s);
+	cast_all_rays(s, rays);
+	render(*s, rays);
+}
 
 int	game_loop(t_struct s)
 {
