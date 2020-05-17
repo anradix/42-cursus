@@ -26,5 +26,5 @@
 
 A Piscine (that means 'swimming pool' in French) is a 4-week intensive and immersive coding bootcamp, 7 days a week. No previous programming experience required. 900 applicants learn C programming and bash scripting through daily exercises. Selected candidates (appr. 250 for Paris and until 2018 since the process changed in 2019) can register to be full-time students at 42, a tuition-free engineering school.
 
-🇫🇷 https://www.42.fr/
+🇫🇷 https://www.42.fr/ <br>
 🇺🇸 https://www.42.us.org/
