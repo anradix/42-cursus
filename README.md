@@ -33,7 +33,7 @@ A Piscine (that means 'swimming pool' in French) is a 4-week intensive and immer
 
 (If you are wondering why we don't use many built-in functions and for loops)
 
-The [Norm](https://github.com/42Paris/norminette) is 42 style guideline and apply for all programs written in C. A single Norm Error leads to the grade of 0/100.
+[The Norm](https://github.com/42Paris/norminette) is 42 style guideline and apply for all programs written in C. A single Norm Error leads to the grade of 0/100.
 * forbidden functions: almost all the Standard C Library functions except read, open, write, malloc and free for some projects
 * 25 lines per function maximum (without external brackets) and 84 characters per line maximum
 * no more than 5 functions in a .c file and no more than 5 variables per function, no comments within a function's body
