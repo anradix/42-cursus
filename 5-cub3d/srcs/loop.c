@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/25 22:31:38 by anradix           #+#    #+#             */
-/*   Updated: 2020/04/13 15:38:47 by anradix          ###   ########.fr       */
+/*   Updated: 2020/04/30 10:19:11 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ void	update(t_struct *s)
 
 int	game_loop(t_struct s)
 {
-	update(&s);
 	mlx_hook(s.mlx.win, 2, 0, &key_press, &s);
 	mlx_hook(s.mlx.win, 3, 0, &key_release, &s);
+	update(&s);
 	mlx_loop(s.mlx.id);
 	return (1);
 }
