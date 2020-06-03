@@ -29,15 +29,14 @@ RUN		openssl req -newkey rsa:2048 -nodes -keyout /etc/ssl/private/ssl_key.key \
 		-x509 -days 365 -out /etc/ssl/certs/ssl_certificate.crt \
 		-subj "/C=FR/ST=Paris/L=Paris/O=42/OU=42/CN=anradix"
 
-COPY	./srcs/default ./etc/nginx/sites-aviable
+COPY	./srcs/default ./etc/nginx/sites-available/default
 COPY	./srcs/infos.php ./var/www/html
-COPY	./srcs/wp-config.php ./var/www/html/wordpress
-COPY	./srcs/db_wordpress	db_wordpress
-
+COPY	./srcs/wp-config.php ./var/www/html/wordpress/wp-config.php
+COPY	./srcs/db_wordpress db_wordpress
 
 RUN		service mysql start && mysql -u root < db_wordpress
 
 CMD		service nginx restart \
 		&& service mysql start \
 		&& service php7.3-fpm start \
-		&& tail 
+		&& bash	
