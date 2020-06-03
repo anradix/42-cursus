@@ -9,10 +9,10 @@ RUN		apt-get install -y \
 		wget \
 		nginx \
 		mariadb-server mariadb-client \ 
-		php-fpm php-mysql && \
-		wget \
-		https://wordpress.org/latest.tar.gz \
-		https://www.phpmyadmin.net/downloads/phpMyAdmin-latest-english.tar.gz
+		php-fpm php-mysql 
+
+RUN		wget https://wordpress.org/latest.tar.gz 
+RUN		wget https://files.phpmyadmin.net/phpMyAdmin/5.0.1/phpMyAdmin-5.0.1-english.tar.gz
 
 RUN		tar -xzvf latest.tar.gz && \
 		mv wordpress /var/www/html/wordpress && \
@@ -32,9 +32,12 @@ RUN		openssl req -newkey rsa:2048 -nodes -keyout /etc/ssl/private/ssl_key.key \
 COPY	./srcs/default ./etc/nginx/sites-aviable
 COPY	./srcs/infos.php ./var/www/html
 COPY	./srcs/wp-config.php ./var/www/html/wordpress
-COPY	./srcs/wp-database	wp-database
-COPY	./srcs/start.sh start.sh
+COPY	./srcs/db_wordpress	db_wordpress
 
-RUN		mysql -u root < wp-database
 
-CMD		bash start.sh && tail -f /dev/null
+RUN		service mysql start && mysql -u root < db_wordpress
+
+CMD		service nginx restart \
+		&& service mysql start \
+		&& service php7.3-fpm start \
+		&& tail 
