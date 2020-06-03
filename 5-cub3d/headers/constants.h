@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:01:44 by anradix           #+#    #+#             */
-/*   Updated: 2020/04/12 21:46:55 by anradix          ###   ########.fr       */
+/*   Updated: 2020/06/03 17:57:02 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@
 #define PI 3.14159265
 #define TWO_PI 6.28318530
 
-#define TILE_SIZE 64
+#define TILE_SIZE 60
 #define MAP_NUM_ROWS 13
 #define MAP_NUM_COLS 20
 

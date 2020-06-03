@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/13 15:28:59 by anradix           #+#    #+#             */
-/*   Updated: 2020/04/13 16:14:44 by anradix          ###   ########.fr       */
+/*   Updated: 2020/06/03 17:47:09 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,8 +42,8 @@ void	move_player(t_struct *s)
 
 	if (!map_wall(new_player_x, new_player_y))
 	{
-        s->player.x = new_player_x - 0.01;
-        s->player.y = new_player_y - 0.01;
+        s->player.x = new_player_x;
+        s->player.y = new_player_y;
     }
 	if(s->player.left_right == 1)
 		s->player.rotationAngle -= PI/2;
