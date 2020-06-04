@@ -2,7 +2,7 @@
 <img  width="80" src="./assets/42_logo.png">
 </p>
 
-<h3 align="center">School project at 42 Paris<br><br><br>
+<h3 align="center">School projects at 42 Paris<br><br><br>
 </h3>
 
 
