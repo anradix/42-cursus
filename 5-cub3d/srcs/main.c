@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 20:02:07 by anradix           #+#    #+#             */
-/*   Updated: 2020/06/04 12:04:25 by anradix          ###   ########.fr       */
+/*   Updated: 2020/06/04 13:44:35 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,11 +33,8 @@ int		main(int argc, char **argv)
 {
 	t_struct s;
 
-	if (argc < 2)
-	{
-		printf("Error\nUsage: ./cub3d [map.cub]\n");
-		return (0);
-	}
+	parsing(&s, argv[1]);
+	return (0);
 	setup(&s, argv[1]);
 	game_loop(s);
 	return (1);
