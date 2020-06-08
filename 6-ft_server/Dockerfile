@@ -15,15 +15,15 @@ RUN		wget https://wordpress.org/latest.tar.gz
 RUN		wget https://files.phpmyadmin.net/phpMyAdmin/5.0.1/phpMyAdmin-5.0.1-english.tar.gz
 
 RUN		tar -xzvf latest.tar.gz && \
-		mv wordpress /var/www/html/wordpress && \
 		rm latest.tar.gz && \
+		mv wordpress /var/www/html/wordpress && \
 		chown -R www-data:www-data /var/www/html/wordpress/ &&\
 		chmod -R 755 /var/www/html/wordpress/ && \
 		rm var/www/html/index.nginx-debian.html && rm /var/www/html/wordpress/wp-config-sample.php
 
 RUN		tar -xzvf phpMyAdmin-5.0.1-english.tar.gz && \
-		mv phpMyAdmin-5.0.1-english /var/www/html/phpmyadmin && \
-		rm phpMyAdmin-5.0.1-english.tar.gz
+		rm phpMyAdmin-5.0.1-english.tar.gz && \
+		mv phpMyAdmin-5.0.1-english /var/www/html/phpmn
 
 RUN		openssl req -newkey rsa:2048 -nodes -keyout /etc/ssl/private/ssl_key.key \
 		-x509 -days 365 -out /etc/ssl/certs/ssl_certificate.crt \
@@ -40,3 +40,9 @@ CMD		service nginx restart \
 		&& service mysql start \
 		&& service php7.3-fpm start \
 		&& bash	
+
+https://docs.oracle.com/cd/E17952_01/mysql-5.5-en/creating-ssl-files-using-openssl.html
+
+
+pas mal :
+https://www.wistee.fr/installer-ssl/activer-ssl-nginx.html
