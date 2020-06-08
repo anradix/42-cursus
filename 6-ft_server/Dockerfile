@@ -41,8 +41,13 @@ CMD		service nginx restart \
 		&& service php7.3-fpm start \
 		&& bash	
 
-https://docs.oracle.com/cd/E17952_01/mysql-5.5-en/creating-ssl-files-using-openssl.html
 
+
+
+SSL TCL
+
+
+https://docs.oracle.com/cd/E17952_01/mysql-5.5-en/creating-ssl-files-using-openssl.html
 
 pas mal :
 https://www.wistee.fr/installer-ssl/activer-ssl-nginx.html
