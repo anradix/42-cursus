@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/04 12:53:12 by anradix           #+#    #+#             */
-/*   Updated: 2020/06/05 23:26:15 by anradix          ###   ########.fr       */
+/*   Updated: 2020/06/09 16:27:05 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ int		get_lineinfos(t_struct *s, char *line)
  // erreur si s est alloue sur la stack, ne pas free dans la focntion elle meme 
 	char *tmp;
 	
-	tmp = s_trim(ss, ' ');
-	printf("%s\n", line);
+	tmp = s_trim(line, ' ');
+	printf("%s\n", tmp);
 /*
 	if (!line)
 		return (0);
