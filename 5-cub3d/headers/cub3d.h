@@ -6,7 +6,7 @@
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/19 21:36:12 by anradix           #+#    #+#             */
-/*   Updated: 2020/06/04 13:10:24 by anradix          ###   ########.fr       */
+/*   Updated: 2020/06/04 19:10:12 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,13 @@
 int	map[MAP_NUM_ROWS][MAP_NUM_COLS];
 uint32_t *wallTexture[NUM_TEXTURES];
 
+// parsing functions 
 bool	parsing(t_struct *s, const char *file_path);
+char	**import_file(t_struct *s, const char *file_path);
+
 void	setup(t_struct *s, const char *file_path);
+
+
 int		game_loop(t_struct s);
 
 void	move_player(t_struct *s);

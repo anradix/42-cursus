@@ -44,10 +44,10 @@ CMD		service nginx restart \
 
 
 
-SSL TCL
+#SSL TCL
 
 
-https://docs.oracle.com/cd/E17952_01/mysql-5.5-en/creating-ssl-files-using-openssl.html
+#https://docs.oracle.com/cd/E17952_01/mysql-5.5-en/creating-ssl-files-using-openssl.html
 
-pas mal :
-https://www.wistee.fr/installer-ssl/activer-ssl-nginx.html
+#pas mal :
+#https://www.wistee.fr/installer-ssl/activer-ssl-nginx.html
