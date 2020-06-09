@@ -34,20 +34,11 @@ COPY	./srcs/infos.php ./var/www/html
 COPY	./srcs/wp-config.php ./var/www/html/wordpress/wp-config.php
 COPY	./srcs/db_wordpress db_wordpress
 
+EXPOSE		80 443
+
 RUN		service mysql start && mysql -u root < db_wordpress
 
 CMD		service nginx restart \
 		&& service mysql start \
 		&& service php7.3-fpm start \
 		&& bash	
-
-
-
-
-#SSL TCL
-
-
-#https://docs.oracle.com/cd/E17952_01/mysql-5.5-en/creating-ssl-files-using-openssl.html
-
-#pas mal :
-#https://www.wistee.fr/installer-ssl/activer-ssl-nginx.html
