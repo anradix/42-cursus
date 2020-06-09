@@ -25,8 +25,8 @@ RUN		tar -xzvf phpMyAdmin-5.0.1-english.tar.gz && \
 		rm phpMyAdmin-5.0.1-english.tar.gz && \
 		mv phpMyAdmin-5.0.1-english /var/www/html/phpmn
 
-RUN		openssl req -newkey rsa:2048 -nodes -keyout /etc/ssl/private/ssl_key.key \
-		-x509 -days 365 -out /etc/ssl/certs/ssl_certificate.crt \
+RUN		openssl req -newkey rsa -nodes -keyout /etc/ssl/private/ssl_key.key \
+		-x509 -out /etc/ssl/certs/ssl_certificate.crt \
 		-subj "/C=FR/ST=Paris/L=Paris/O=42/OU=42/CN=anradix"
 
 COPY	./srcs/default ./etc/nginx/sites-available/default
