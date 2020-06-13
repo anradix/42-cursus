@@ -23,7 +23,7 @@ RUN	tar -xzvf latest.tar.gz && \
 
 RUN	tar -xzvf phpMyAdmin-5.0.1-english.tar.gz && \
 	rm phpMyAdmin-5.0.1-english.tar.gz && \
-	mv phpMyAdmin-5.0.1-english /var/www/html/phpmn
+	mv phpMyAdmin-5.0.1-english /var/www/html/phpMyadmin
 
 RUN	openssl req -newkey rsa -nodes -keyout /etc/ssl/private/ssl_key.key \
 	-x509 -out /etc/ssl/certs/ssl_certificate.crt \
