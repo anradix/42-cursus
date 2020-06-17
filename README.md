@@ -14,7 +14,7 @@
 | [netwhat](./3-netwhat)             | An introduction to network problematics                       | Solo      |            | 100/100 |
 | [ft_print](./4-ft_printf)          | A lib with ft_printf function that will mimic the real printf | Solo      | C          | 104/100 |
 | [cub3d](./5-cub3d)                 | Use ray-casting to make a dynamic view inside a maze          | Solo      | C          |         |
-| [ft_server](./6-ft_server)         | Set up a Docker LEMP stack for WordPress                      |           | Dockerfile |         |
+| [ft_server](./6-ft_server)         | Set up a Docker LEMP stack for WordPress                      | Solo      | Dockerfile | 100/100 |
 
 
 <br><br>
