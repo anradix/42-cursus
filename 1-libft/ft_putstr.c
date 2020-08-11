@@ -5,14 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 16:15:20 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:06:56 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/13 18:41:23 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 10:39:00 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** The ft_putstr() function outputs the string s.
-*/
 
 #include "libft.h"
 #include <unistd.h>

@@ -3,17 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 11:24:23 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/05 17:04:30 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/12 12:22:34 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/12 16:22:40 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** The ft_strstr() function locates the first occurrence of the null-terminated
-** string needle in the null-terminated string haystack.
-*/
 
 #include "libft.h"
 
@@ -28,7 +23,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 	while (haystack[i] && i < len)
 	{
 		j = 0;
-		while ((i + j < len) && needle[j] == haystack[i + j])
+		while (needle[j] == haystack[i + j] && (i + j) < len)
 		{
 			if (needle[j + 1] == '\0')
 				return ((char*)haystack + i);

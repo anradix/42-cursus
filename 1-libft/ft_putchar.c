@@ -5,14 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 16:13:51 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:04:47 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/13 18:39:37 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 10:40:29 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** The ft_putchar() function writes the character c.
-*/
 
 #include "libft.h"
 #include <unistd.h>

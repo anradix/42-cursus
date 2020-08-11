@@ -1,18 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 16:40:44 by anradix           #+#    #+#             */
-/*   Updated: 2018/11/13 18:22:03 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/15 10:19:05 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/19 20:18:12 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_bzero(void *s, size_t n)
+void	ft_strdel(char **as)
 {
-	ft_memset(s, '\0', n);
+	if (as)
+	{
+		free(*as);
+		*as = NULL;
+	}
 }

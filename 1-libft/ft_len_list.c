@@ -1,18 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_len_list.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anradix <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 16:40:44 by anradix           #+#    #+#             */
-/*   Updated: 2018/11/13 18:22:03 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/21 13:51:14 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/21 13:51:40 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+int		ft_len_list(t_list *list)
 {
-	ft_memset(s, '\0', n);
+	int		n;
+
+	if (!list)
+		return (0);
+	n = 0;
+	while (list)
+	{
+		++n;
+		list = list->next;
+	}
+	return (n);
 }

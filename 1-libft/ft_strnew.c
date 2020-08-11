@@ -5,18 +5,13 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 15:41:28 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:33:57 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/15 09:30:43 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 11:42:00 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-
-/*
-** The ft_strnew() function allocates (with malloc(3)) a char*
-** size byte and set the memory as '\0'.
-*/
 
 char	*ft_strnew(size_t size)
 {

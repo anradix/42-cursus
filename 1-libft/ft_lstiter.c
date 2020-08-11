@@ -3,27 +3,22 @@
 /*                                                        :::      ::::::::   */
 /*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 05:17:54 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 15:44:12 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/20 08:12:25 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/21 13:11:30 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_lstiter() function iterates the list lst and applies the function f
-** to the content of each element.
-*/
-
 #include "libft.h"
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
+void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
 	if (f)
 	{
 		while (lst)
 		{
-			(*f)(lst->content);
+			(*f)(lst);
 			lst = lst->next;
 		}
 	}

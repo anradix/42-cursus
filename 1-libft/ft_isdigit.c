@@ -3,20 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isdigit.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 11:40:04 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/05 11:40:12 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/08 09:41:42 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/09 09:12:17 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_isdigit() function check for a digit (0 through 9).
-*/
-
 #include "libft.h"
 
-int	ft_isdigit(int c)
+int			ft_isdigit(int c)
 {
 	return (c >= '0' && c <= '9' ? 1 : 0);
 }

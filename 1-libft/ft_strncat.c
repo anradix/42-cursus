@@ -1,34 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tensdel.c                                       :+:      :+:    :+:   */
+/*   ft_strncat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 16:42:42 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:29:58 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/10 17:47:01 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/12 16:30:30 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_tensdel() function free a 3d array.
-*/
-
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_tensdel(void ***tab)
+char	*ft_strncat(char *dest, const char *src, size_t n)
 {
-	int i;
+	size_t	i;
+	size_t	len;
 
 	i = 0;
-	if (tab)
+	len = ft_strlen(dest);
+	while (i < n && src[i])
 	{
-		while (tab[i])
-		{
-			ft_tabdel(tab[i]);
-			i++;
-		}
-		free(tab);
+		dest[len + i] = src[i];
+		i++;
 	}
+	dest[len + i] = '\0';
+	return (dest);
 }

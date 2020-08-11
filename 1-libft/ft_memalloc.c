@@ -5,15 +5,10 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 15:35:53 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:31:47 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/15 08:26:15 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 10:42:06 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** The ft_memalloc() function allocates (with malloc(3)) size byte and set the
-** memory as 0.
-*/
 
 #include "libft.h"
 #include <stdlib.h>

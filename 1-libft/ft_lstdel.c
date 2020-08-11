@@ -1,36 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen_base.c                                   :+:      :+:    :+:   */
+/*   ft_lstdel.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 17:14:39 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:01:33 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/20 08:10:37 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/21 14:06:05 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_nbrlen_base() function returns the len of nb modify by base.
-*/
-
 #include "libft.h"
+#include <stdlib.h>
 
-size_t		ft_nbrlen_base(int nb, int base)
+void	ft_lstdel(t_list **alst, void (*del)(void *, size_t))
 {
-	size_t	len;
+	t_list	*list;
 
-	len = 0;
-	if (base < 2)
-		return (0);
-	if (nb == 0)
-		return (1);
-	if (nb < 0)
-		nb *= -1;
-	while (nb)
+	if (!alst || !del)
+		return ;
+	list = *alst;
+	while (list)
 	{
-		nb /= base;
-		len += 1;
+		del(list->content, list->content_size);
+		free(list);
+		list = list->next;
 	}
-	return (len);
+	*alst = NULL;
 }

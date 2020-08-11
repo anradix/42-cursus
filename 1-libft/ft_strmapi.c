@@ -3,37 +3,31 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strmapi.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:57:35 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:21:07 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/15 14:38:02 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 10:30:58 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_strmapi() a pplies the function f to each character ofthe string
-** passed as argument to ** create a newstring (with malloc(3)) resulting from
-** successive applications of f.
-*/
-
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char			*str;
-	size_t			i;
+	unsigned int	i;
 
-	if (!s || !f)
-		return (NULL);
 	i = 0;
-	if (!(str = (char *)malloc(sizeof(char) * (ft_strlen(s) + 1))))
-		return (NULL);
-	while (s[i])
+	if (s && f)
 	{
-		str[i] = f(i, s[i]);
-		i++;
+		if (!(str = ft_strnew(ft_strlen(s))))
+			return (NULL);
+		while (s[i])
+		{
+			str[i] = f(i, s[i]);
+			i++;
+		}
+		return (str);
 	}
-	str[i] = '\0';
-	return (str);
+	return (NULL);
 }

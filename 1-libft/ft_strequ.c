@@ -1,34 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tabdel.c                                        :+:      :+:    :+:   */
+/*   ft_strequ.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 16:53:03 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:27:30 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/15 14:42:56 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/19 20:16:49 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_tabdel() function free a 2d array.
-*/
-
 #include "libft.h"
-#include <stdlib.h>
 
-void	ft_tabdel(void **tab)
+int		ft_strequ(char const *s1, char const *s2)
 {
-	int i;
-
-	i = 0;
-	if (tab)
-	{
-		while (tab[i])
-		{
-			free(tab[i]);
-			i++;
-		}
-		free(tab);
-	}
+	if (s1 && s2)
+		return ((ft_strcmp(s1, s2) == 0) ? 1 : 0);
+	return (0);
 }

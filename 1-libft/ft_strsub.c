@@ -1,32 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstsize.c                                       :+:      :+:    :+:   */
+/*   ft_strsub.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/07 05:33:38 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 15:48:42 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/15 15:00:10 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 10:25:21 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_lstsize() function counts the number of elements int a list.
-*/
-
 #include "libft.h"
 
-int	ft_lstsize(t_list *lst)
+char	*ft_strsub(char const *s, unsigned int start, size_t len)
 {
-	int	n;
+	size_t	i;
+	char	*str;
 
-	if (!lst)
-		return (0);
-	n = 0;
-	while (lst)
+	i = 0;
+	if (s)
 	{
-		++n;
-		lst = lst->next;
+		if (!(str = ft_strnew(len)))
+			return (NULL);
+		while (i < len)
+			str[i++] = s[start++];
+		return (str);
 	}
-	return (n);
+	return (NULL);
 }

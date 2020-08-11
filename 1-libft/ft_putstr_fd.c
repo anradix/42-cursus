@@ -3,21 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:50:41 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:07:11 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/13 19:08:35 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 10:38:47 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** The ft_putstr_fd() outputs the string c to given file descriptor.
-*/
 
 #include "libft.h"
 #include <unistd.h>
 
-void	ft_putstr_fd(char *s, int fd)
+void	ft_putstr_fd(char const *s, int fd)
 {
 	if (s)
 		write(fd, s, ft_strlen(s));

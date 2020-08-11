@@ -1,45 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_init_tab.c                                      :+:      :+:    :+:   */
+/*   ft_strsplit.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 17:07:34 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:33:31 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/16 14:00:49 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/20 07:34:36 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** The ft_init_tab() function allocates a 2d array size x by y bytes and the
-** memory is initialized by c.
-*/
 
 #include "libft.h"
 #include <stdlib.h>
 
-void	**ft_init_tab(size_t y, size_t x, char c)
+char	**ft_strsplit(char const *s, char c)
 {
-	size_t	i;
-	size_t	j;
-	char	**tab;
+	char				**tab;
+	unsigned int		j;
+	unsigned int		k;
 
-	i = 0;
-	if (!(tab = (char **)malloc(sizeof(char *) * (y + 1))))
+	j = 0;
+	if (!s || !(tab = malloc(sizeof(char*) * (ft_count_words(s, c) + 1))))
 		return (NULL);
-	while (i < y)
+	while (*s)
 	{
-		j = 0;
-		if (!(tab[i] = (char *)malloc(sizeof(char) * (x + 1))))
-			return (0);
-		while (j < x)
+		if (*s != c)
 		{
-			tab[i][j] = c;
+			k = 0;
+			if (!(tab[j] = (char*)malloc(sizeof(char) * ft_word_len(s, c) + 1)))
+				return (NULL);
+			while (*s != c && *s != '\0')
+				tab[j][k++] = *s++;
+			tab[j][k++] = '\0';
 			j++;
 		}
-		tab[i][j] = '\0';
-		i++;
+		else
+			s++;
 	}
-	tab[i] = NULL;
-	return ((void**)tab);
+	tab[j] = NULL;
+	return (tab);
 }

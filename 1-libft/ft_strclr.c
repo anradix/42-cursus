@@ -1,22 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_nbrlen.c                                        :+:      :+:    :+:   */
+/*   ft_strclr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 17:14:39 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 15:59:56 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/15 13:40:11 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 10:36:11 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_nbrlen() functon returns the len of nb.
-*/
-
 #include "libft.h"
 
-size_t		ft_nbrlen(int nb)
+void	ft_strclr(char *s)
 {
-	return (ft_nbrlen_base(nb, 10));
+	if (s)
+	{
+		while (*s)
+			*s++ = '\0';
+	}
 }

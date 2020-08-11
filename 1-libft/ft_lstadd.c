@@ -1,31 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strdlen.c                                       :+:      :+:    :+:   */
+/*   ft_lstadd.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 16:28:14 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:20:23 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/20 08:10:18 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/20 17:01:49 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-/*
-** The ft_strdlen() function returns the distance that separates it from the
-** delimiter d or '\ 0'.
-*/
-
-int		ft_strdlen(char const *s, char d)
+void	ft_lstadd(t_list **alst, t_list *new)
 {
-	size_t i;
-
-	i = 0;
-	while (*s && *s != d)
+	if (alst)
 	{
-		s++;
-		i++;
+		new->next = *alst;
+		*alst = new;
 	}
-	return (i);
 }

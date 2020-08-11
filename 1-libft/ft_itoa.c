@@ -3,21 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_itoa.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:02:20 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 15:40:53 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/16 15:35:49 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/16 18:24:02 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_itoa() function allocates (with malloc(3)) and returns a string
-** representing the integer received as an argument. Negative numbers must be
-** handled.
-*/
-
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_itoa(int n)
 {
@@ -29,9 +22,8 @@ char	*ft_itoa(int n)
 	tmp = n;
 	while (tmp /= 10)
 		size++;
-	if (!(str = (char*)malloc(sizeof(char) * ((size + 1)))))
+	if (!(str = ft_strnew(size)))
 		return (NULL);
-	ft_bzero(str, size + 1);
 	tmp = n;
 	while (size--)
 	{

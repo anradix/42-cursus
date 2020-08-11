@@ -3,20 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isprint.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/05 11:39:54 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/05 11:39:59 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/08 10:55:17 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/09 09:12:24 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_isprint() function checks for any printable character including space.
-*/
-
 #include "libft.h"
 
-int	ft_isprint(int c)
+int			ft_isprint(int c)
 {
 	return ((c >= ' ' && c <= '~') ? 1 : 0);
 }

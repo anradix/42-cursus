@@ -1,18 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_bzero.c                                         :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
+/*   By: anradix <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/11/13 16:40:44 by anradix           #+#    #+#             */
-/*   Updated: 2018/11/13 18:22:03 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/21 13:42:37 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/21 13:44:18 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_bzero(void *s, size_t n)
+char	*ft_strrev(char *str)
 {
-	ft_memset(s, '\0', n);
+	int		i;
+	int		j;
+	char	k;
+
+	i = 0;
+	j = 0;
+	while (str[i + 1] != '\0')
+		i++;
+	while (j < i)
+	{
+		k = str[j];
+		str[j] = str[i];
+		str[i] = k;
+		j++;
+		i--;
+	}
+	return (str);
 }

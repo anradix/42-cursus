@@ -3,16 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:45:56 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:06:11 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/13 19:03:44 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 10:37:01 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** The ft_putnbr_fd() function outputs the integer n to given file descriptor.
-*/
 
 #include "libft.h"
 

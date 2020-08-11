@@ -3,16 +3,12 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putchar_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: anradix <anradix@42.fr>                    +#+  +:+       +#+        */
+/*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/11/06 15:52:17 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:05:18 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/13 18:57:47 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/13 19:12:14 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
-
-/*
-** The ft_putchar_fd outputs the character c to given file descriptor.
-*/
 
 #include "libft.h"
 #include <unistd.h>

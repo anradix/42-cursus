@@ -1,29 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_tenslen.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: anradix <anradix@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/09/28 16:38:26 by anradix           #+#    #+#             */
-/*   Updated: 2019/11/07 16:30:32 by anradix          ###   ########.fr       */
+/*   Created: 2018/11/13 19:00:41 by anradix           #+#    #+#             */
+/*   Updated: 2018/11/17 10:37:26 by anradix          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-/*
-** The ft_tenslen() function return the len of a 3d array.
-*/
-
 #include "libft.h"
 
-size_t		ft_tenslen(char ***tab)
+void	ft_putnbr(int n)
 {
-	unsigned int len;
-
-	len = 0;
-	if (!tab)
-		return (0);
-	while (tab[len])
-		len++;
-	return (len);
+	ft_putnbr_fd(n, 1);
 }
