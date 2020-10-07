@@ -2,12 +2,12 @@
 _Subject [here](../subjects/libft.subject.pdf)_
 
 ### Introduction
-    C programming can be very tedious when one doesn’t have access to those highly useful
-    standard functions. This project gives you the opportunity to re-write those functions,
-    understand them, and learn to use them. This library will help you for all your future C
-    projects.
-    Through this project, we also give you the opportunity to expand the list of functions
-    with your own. Take the time to expand yourlibftthroughout the year.``
+C programming can be very tedious when one doesn’t have access to those highly useful
+standard functions. This project gives you the opportunity to re-write those functions,
+understand them, and learn to use them. This library will help you for all your future C
+projects.
+Through this project, we also give you the opportunity to expand the list of functions
+with your own. Take the time to expand yourlibftthroughout the year.
 
 ### How do I use the library?
 
@@ -18,6 +18,8 @@ _Subject [here](../subjects/libft.subject.pdf)_
 
 2. Run Make so you can build the library:
 
-        eqwfde e3make
+        make
 
-3. ddd
+3. Compile your project with the library _(dont forget to include ``libf.h`` in your project)_:
+
+        gcc -I [libft_path] [your_file.c] [path_to_libft/libft.a]
