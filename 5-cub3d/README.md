@@ -2,7 +2,7 @@
 _Subject [here](../subjects/cub3d.subject.pdf)_
 
 <p align="center"> 
-<img  width="100" src="../assets/screenshot.png">
+<img  width="800" src="../assets/screenshot.png">
 </p>
 
 
