@@ -21,4 +21,4 @@ The key to a successful ft_printf is a well-structured and good extensible code.
  
 3. Compile your project with the library (dont forget to include ``ft_printf.h`` in your project):
 
-        gcc -Wall -Wextra -Werror -I [ft_printf_path/headers] [your_file.c] [path_to_ft_printf/ft_printf.a]
+        gcc -Wall -Wextra -Werror -I [ft_printf_path/headers] [your_file.c] [ft_printf_path/ft_printf.a]
