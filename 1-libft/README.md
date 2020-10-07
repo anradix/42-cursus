@@ -12,10 +12,12 @@ _Subject [here](../subjects/libft.subject.pdf)_
 ### How do I use the library?
 
 1. Clone this repo and cd into it:
-    git clone https://github.com/antoineradix/42-cursus.git
-    cd 1-libft
+ 
+        git clone https://github.com/antoineradix/42-cursus.git
+        cd 1-libft
 
 2. Run Make so you can build the library:
-    make
+
+        eqwfde e3make
 
 3. ddd
