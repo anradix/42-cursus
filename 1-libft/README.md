@@ -42,7 +42,7 @@ with your own. Take the time to expand your libft throughout the year.
 - All heap allocated memory space must be properly freed when necessary. No leaks
     will be tolerated.
 - If the subject requires it, you must submit a Makefilewhich will compile your
-    source files to the required output with the flags-Wall,-Wextraand-Werror, and
+    source files to the required output with the flags -Wall, -Wextra and -Werror, and
     your Makefile must not relink.
 - YourMakefilemust at least contain the rules$(NAME),all,clean,fcleanand
     re.
