@@ -9,3 +9,13 @@ _Subject [here](../subjects/libft.subject.pdf)_
     Through this project, we also give you the opportunity to expand the list of functions
     with your own. Take the time to expand yourlibftthroughout the year.``
 
+### How do I use the library?
+
+1. Clone this repo and cd into it:
+    git clone https://github.com/antoineradix/42-cursus.git
+    cd 1-libft
+
+2. Run Make so you can build the library:
+    make
+
+3. ddd
