@@ -16,13 +16,13 @@ static variables.
 
 2. Build the executable
 
-        gcc -Wall -Wextra -Werror [your_file.c] [get_next_line.c] [get_next_line_utils.c]
+        gcc -Wall -Wextra -Werror [main.c] [get_next_line.c] [get_next_line_utils.c]
 
 3. Now we can test it with
      
         ./a.out [file.txt]
 
-### Here is a 
+### Here is a minimal main example
 
 ```C
 #include "get_next_line.h"
