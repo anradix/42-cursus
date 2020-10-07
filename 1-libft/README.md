@@ -1,5 +1,5 @@
 # libft
-Subject [here](../subjects/libft.subject.pdf) 
+_Subject [here](../subjects/libft.subject.pdf)_
 
 ### Introduction
     C programming can be very tedious when one doesn’t have access to those highly useful
