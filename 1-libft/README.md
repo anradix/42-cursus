@@ -14,12 +14,12 @@ with your own. Take the time to expand yourlibftthroughout the year.
 1. Clone this repo and cd into it:
  
         git clone https://github.com/antoineradix/42-cursus.git
-        cd 1-libft
+        cd 42-cursus/1-libft
 
 2. Run Make so you can build the library:
 
         make
 
-3. Compile your project with the library _(dont forget to include ``libf.h`` in your project)_:
+3. Compile your project with the library _(dont forget to include ``libft.h`` in your project)_:
 
         gcc -I [libft_path] [your_file.c] [path_to_libft/libft.a]
