@@ -31,7 +31,7 @@ static variables.
 
 int		main(int argc, char **argv)
 {
-	int		fd;
+	int	fd;
 	char	*line;
 
 	if (argc == 1)
