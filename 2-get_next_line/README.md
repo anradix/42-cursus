@@ -9,7 +9,7 @@ but it will also allow you to learn a highly interesting new concept in C progra
 static variables.
 
 ### How do I use it?
-1. Clone this repo and cd into it:
+1. Clone this repo and cd into it
     
        git clone https://github.com/antoineradix/42-cursus.git
        cd 42-cursus/2-get_next_line
