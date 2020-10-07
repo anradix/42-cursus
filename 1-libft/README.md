@@ -1,3 +1,1 @@
-### libft
-
-[subject]("../subjects/libft.subject.pdf")
+### libft [subject]("../subjects/libft.subject.pdf")
