@@ -2,7 +2,7 @@
 
 ## Your very first own library
 
-_Summary: The aim of this project is to code aClibrary regrouping usual functions that
+_Summary: The aim of this project is to code a C library regrouping usual functions that
 you’ll be allowed to use in all your other projects._
 
 
@@ -21,12 +21,12 @@ you’ll be allowed to use in all your other projects._
 
 # Introduction
 
-Cprogramming can be very tedious when one doesn’t have access to those highly useful
+C programming can be very tedious when one doesn’t have access to those highly useful
 standard functions. This project gives you the opportunity to re-write those functions,
-understand them, and learn to use them. This library will help you for all your futureC
+understand them, and learn to use them. This library will help you for all your future C
 projects.
 Through this project, we also give you the opportunity to expand the list of functions
-with your own. Take the time to expand yourlibftthroughout the year.
+with your own. Take the time to expand your libft throughout the year.
 
 
 # Chapter II
@@ -117,17 +117,17 @@ functions:
 - strlcpy
 - strlcat
 - strchr
-    - strrchr
-    - strnstr
-    - strncmp
-    - atoi
-    - isalpha
-    - isdigit
-    - isalnum
-    - isascii
-    - isprint
-    - toupper
-    - tolower
+- strrchr
+- strnstr
+- strncmp
+- atoi
+- isalpha
+- isdigit
+- isalnum
+- isascii
+- isprint
+- toupper
+- tolower
 
 ```
 You must also re-code the following functions, using the function “malloc”:
