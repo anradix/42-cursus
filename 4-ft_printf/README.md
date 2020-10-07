@@ -19,10 +19,10 @@ You will mainly learn how to use variadic arguments._
 
 # Introduction
 
-The versatility of theprintffunction inCrepresents a great exercise in programming for
+The versatility of the printf function in C represents a great exercise in programming for
 us. This project is of moderate difficulty. It will enable you to discover variadic functions
-inC.
-The key to a successfulft_printfis a well-structured and good extensible code.
+in C.
+The key to a successful ft_printf is a well-structured and good extensible code.
 
 
 # Chapter II
