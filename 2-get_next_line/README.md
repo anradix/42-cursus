@@ -27,6 +27,7 @@ static variables.
 ```C
 #include "get_next_line.h"
 #include <fcntl.h>
+#include <stdio.h>
 
 int		main(int argc, char **argv)
 {
@@ -41,7 +42,7 @@ int		main(int argc, char **argv)
 		return (2);
 	while (get_next_line(fd, &line) == 1)
 	{
-		ft_putendl(line);
+		printf("%s", line);
 		free(line);
 	}
 	if (argc == 2)
