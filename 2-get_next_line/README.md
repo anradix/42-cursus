@@ -22,7 +22,7 @@ static variables.
      
         ./a.out [file.txt]
 
-### Here is a minimal main example
+### Here is a minimal main.c example
 
 ```C
 #include "get_next_line.h"
