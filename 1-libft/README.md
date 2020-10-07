@@ -22,4 +22,4 @@ with your own. Take the time to expand yourlibftthroughout the year.
 
 3. Compile your project with the library _(dont forget to include ``libft.h`` in your project)_:
 
-        gcc -Wall -Wextra -Werror -I [libft_path] [your_file.c] [path_to_libft/libft.a]
+        gcc -Wall -Wextra -Werror -I [libft_path] [your_file.c] [libft_path/libft.a]
