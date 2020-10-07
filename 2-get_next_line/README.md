@@ -14,6 +14,6 @@ static variables.
        git clone https://github.com/antoineradix/42-cursus.git
        cd 42-cursus/2-get_next_line
 
-2. Build the executable
+3. Build the executable
 
-        gcc [your_file.c] [get_next_line.c]
+        gcc -Wall -Wextra -Werror [your_file.c] [get_next_line.c] [get_next_line_utils.c]
