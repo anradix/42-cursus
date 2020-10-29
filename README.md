@@ -11,7 +11,7 @@
 |------------------------------------------|---------------------------------------------------------------|-----------|------------|---------|
 | [libft](./1-libft)                       | Implementations of the Standard C Library functions           | Solo      | C          | 105/100 |
 | [get_next_line](./2-get_next_line)       | A function that reads a file line by line                     | Solo      | C          | 107/100 |
-| [netwhat](./subjects/netwhat.subject.pdf)| An introduction to network problematics                       | Solo      |            | 100/100 |
+| [netwhat](https://drive.google.com/file/d/19wuNml6piO6r4EacTPL0VK9hwDEbs2pB/view?usp=sharing)| An introduction to network problematics                       | Solo      |            | 100/100 |
 | [ft_printf](./4-ft_printf)               | A lib with ft_printf function that will mimic the real printf | Solo      | C          | 104/100 |
 | [cub3d](./5-cub3d)                       | Use ray-casting to make a dynamic view inside a maze          | Solo      | C          | 102/100 |
 | [ft_server](./6-ft_server)               | Set up a Docker LEMP stack for WordPress                      | Solo      | Dockerfile | 100/100 |
