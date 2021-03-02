@@ -6,7 +6,7 @@
 #    By: anradix <anradix@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/05 11:35:13 by anradix           #+#    #+#              #
-#    Updated: 2020/09/16 20:41:58 by anradix          ###   ########.fr        #
+#    Updated: 2020/09/16 20:21:07 by anradix          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -65,16 +65,20 @@ all: $(NAME)
 $(NAME): $(OBJS)
 	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
+	@echo "$(GREEN)\nmylib.a has been successfully created"
 
 %.o: %.c
+	@echo "$(GREEN).\c"
 	@$(CC) $(FLAGS) -I $(HEADER) -o $@ -c $<
 
 clean:
 	@rm -rf $(OBJS)
 	@rm -rf $(OBJS_B)
+	@echo "$(YELLOW)mylib clean OK"
 
 fclean: clean
 	@rm -f $(NAME)
+	@echo "$(RED)mylib fclean OK"
 
 re: fclean all
 	@rm -f $(OBJS)
